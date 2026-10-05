@@ -1,0 +1,2 @@
+# Optional: only needed for VIREO_LLM=1
+anthropic==1.11.0

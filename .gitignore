@@ -2,3 +2,5 @@ __pycache__/
 .pytest_tmp/
 .pytest_cache/
 *.pyc
+outputs/sample/
+outputs/llm_cache.json
