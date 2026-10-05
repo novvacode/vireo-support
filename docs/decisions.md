@@ -47,3 +47,33 @@ Format: Decision / Why / What it changes.
 11. **Raw files are found by suffix (`*-tickets.csv`) rather than renamed.**
     Why: the pack ships with UUID-prefixed names; leaving `data/` untouched keeps it identical to what the client sent.
     What it changes: `src/load.find_file` errors if zero or several files match.
+
+## Stage 2: volume, workload, capacity, mis-routing (2026-10-05)
+
+12. **"True owner" = policy §6 owner of the work, judged from agent notes; only Billing-tagged tickets are re-assigned in the main ranking.**
+    Why: the brief asks specifically about Billing. Notes are written after the work, so they are the best evidence of what the ticket was. "Other"-tagged delivery work (419 tickets) is reported but not moved, to keep the comparison conservative.
+    What it changes: Logistics 2,826 vs Billing 1,504 (high + medium); 2,565 vs 1,765 (high only).
+
+13. **Capacity assumes 22 shifts per agent a month (5-day week) at 8 h (policy §4).**
+    Why: the roster has no working-day or leave data. 22 is a standard Indian 5-day-week figure.
+    What it changes: absolute "hours available" only. Relative per-agent comparisons don't depend on it.
+
+14. **Repeat contact = same customer, next contact within 30 days of the previous one's resolution (or of its creation, if it was never resolved). "Same issue" is reported two ways: customer + SKU (upper bound) and customer + category (lower bound).**
+    Why: policy §10 doesn't define "same issue". 87% of customer+SKU repeats have a different category, so that key overstates. The category key misses re-tagged repeats.
+    What it changes: overall 24.0% vs 4.3%; team rankings are reported on the category key.
+
+15. **Workload cost = policy §4 contact cost by channel + Rs 305 per known transfer + Rs 350 per breach. Legacy transfers add nothing (unknown, not zero).**
+    Why: the brief requires policy costs. Imputing legacy transfers would invent numbers.
+    What it changes: transfer cost is a lower bound before Sep 2025.
+
+16. **Mis-routing cost is stated as Jan–Jun 2026 × 2: transfers + breaches above the Logistics-tagged breach rate.**
+    Why: the most recent six months, all on helpdesk (transfers known), reflect current routing. Excess over the correctly-routed rate avoids counting breaches that would have happened anyway.
+    What it changes: about Rs 2.33 lakh a year. Re-handling time and CSAT are excluded, so it is a floor.
+
+17. **Hand-label check: 60 Billing-tagged tickets drawn with `sample(60, random_state=2026)` and labelled delivery / not-delivery from the notes (message if notes were empty), stored in `labels/`.**
+    Why: the brief asks how sure we are. The script asserts the label file matches the seeded draw, so it can't silently drift.
+    What it changes: rule accuracy 60/60 (95% CI 94–100%). Flagged as optimistic because the same person wrote the rule and the labels.
+
+18. **Charts are static PNG small multiples (one panel per team or category), with 3 series at most in comparison charts.**
+    Why: 11 categories on one line chart can't be read, and the reference palette validates only 3 series all-pairs.
+    What it changes: presentation only.

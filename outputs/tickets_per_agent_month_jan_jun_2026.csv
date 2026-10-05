@@ -1,0 +1,45 @@
+resolver_team,resolver_shift,agent_id,tickets_per_month
+Billing,Day,A3035,49.5
+Billing,Morning,A3032,22.7
+Billing,Morning,A3033,22.0
+Billing,Morning,A3034,21.0
+Chat Frontline,Day,A3010,30.7
+Chat Frontline,Day,A3011,29.3
+Chat Frontline,Day,A3013,30.8
+Chat Frontline,Morning,A3004,8.3
+Chat Frontline,Morning,A3005,8.5
+Chat Frontline,Morning,A3006,9.0
+Chat Frontline,Morning,A3007,10.3
+Chat Frontline,Morning,A3008,12.3
+Chat Frontline,Morning,A3009,11.5
+Chat Frontline,Morning,A3012,9.0
+Chat Frontline,Morning,A3014,8.8
+Chat Frontline,Morning,A3015,8.3
+Chat Frontline,Night,A3001,14.7
+Chat Frontline,Night,A3002,14.2
+Chat Frontline,Night,A3003,13.5
+Email Frontline,Day,A3018,51.7
+Email Frontline,Morning,A3019,8.7
+Email Frontline,Morning,A3020,8.5
+Email Frontline,Morning,A3021,8.7
+Email Frontline,Morning,A3022,7.5
+Email Frontline,Night,A3016,16.3
+Email Frontline,Night,A3017,12.5
+Escalations & Warranty,Day,A3042,18.8
+Escalations & Warranty,Morning,A3039,3.8
+Escalations & Warranty,Morning,A3040,7.5
+Escalations & Warranty,Morning,A3041,4.7
+Escalations & Warranty,Morning,A3043,4.8
+Escalations & Warranty,Morning,A3044,5.3
+Logistics,Day,A3029,37.3
+Logistics,Day,A3030,36.5
+Logistics,Morning,A3027,28.7
+Logistics,Morning,A3028,27.7
+Logistics,Morning,A3031,30.3
+Returns Desk,Day,A3036,33.0
+Returns Desk,Morning,A3037,18.2
+Returns Desk,Morning,A3038,19.3
+Voice Frontline,Day,A3023,10.2
+Voice Frontline,Day,A3024,13.2
+Voice Frontline,Day,A3026,12.5
+Voice Frontline,Morning,A3025,21.3

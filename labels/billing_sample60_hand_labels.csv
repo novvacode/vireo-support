@@ -1,0 +1,61 @@
+ticket_id,hand_label,basis
+TK-249044,not_delivery,notes: amount deducted without order; refund to source
+TK-250556,delivery,notes: parcel stuck; lost in transit
+TK-252216,not_delivery,notes: discount not applied
+TK-252049,not_delivery,notes: discount not applied
+TK-246899,not_delivery,notes: coupon not applied
+TK-246757,not_delivery,notes: promo code invalid
+TK-242188,not_delivery,notes: coupon not applied
+TK-241543,not_delivery,notes: coupon not applied
+TK-249409,not_delivery,notes: payment debited no order; UTR
+TK-253476,not_delivery,notes: GST invoice
+TK-242215,not_delivery,notes: promo code invalid
+TK-253974,not_delivery,notes: refund pending for a return (Returns-type work; not delivery)
+TK-240534,not_delivery,notes thin ('cx ok'); message: charged twice
+TK-250911,not_delivery,notes: refund not credited; PG status
+TK-244825,delivery,notes: order not delivered; re-shipped
+TK-242808,delivery,notes: parcel stuck; AWB
+TK-248235,delivery,notes: order not delivered; RTO reshipped
+TK-243719,not_delivery,notes: amount deducted without order
+TK-249786,not_delivery,notes: failed order after payment
+TK-242151,not_delivery,notes: discount not applied
+TK-241427,delivery,notes: bot tagged as billing; shipment issue
+TK-244203,delivery,notes: this is a delivery delay
+TK-241614,not_delivery,notes: failed order after payment; order manually created
+TK-243667,delivery,notes: order not delivered; AWB; reshipped (Billing agent did it)
+TK-246012,not_delivery,notes: GST invoice
+TK-246684,delivery,notes: order not delivered; courier confirmed (Billing agent did it)
+TK-245226,delivery,notes: not a billing issue - delivery
+TK-244432,delivery,notes: shipment not received; RTO
+TK-250668,not_delivery,notes thin ('cx ok'); message: invoice not downloading
+TK-246767,not_delivery,notes: failed order after payment; UTR
+TK-242777,not_delivery,notes: cancellation before dispatch
+TK-241805,not_delivery,notes: discount not applied
+TK-246857,not_delivery,notes: refund delay; PG status
+TK-250189,not_delivery,notes: coupon not applied
+TK-254172,delivery,notes: delivery delayed; re-shipped (Billing agent did it)
+TK-244476,not_delivery,notes: duplicate payment
+TK-249312,not_delivery,notes: amount deducted without order; UTR
+TK-242135,not_delivery,notes: GST invoice
+TK-246906,not_delivery,notes: charged twice
+TK-243619,not_delivery,notes: refund pending; PG status
+TK-250125,not_delivery,notes thin ('cx ok'); message: GST invoice
+TK-248520,delivery,notes: delivery delayed; re-shipped (Billing agent did it)
+TK-252500,not_delivery,notes: invoice query
+TK-247979,delivery,notes: shipment not received; RTO
+TK-240710,not_delivery,notes: invoice not downloading
+TK-251343,not_delivery,notes: payment debited no order
+TK-246050,delivery,notes: delivery delayed; AWB
+TK-242963,delivery,notes: parcel stuck
+TK-247903,delivery,notes: shipment issue -> logistics
+TK-250919,not_delivery,notes: payment debited no order; UTR
+TK-249259,not_delivery,notes: failed order after payment
+TK-251616,delivery,notes: order not delivered; RTO
+TK-250148,not_delivery,notes: double charge; UTRs
+TK-249900,delivery,notes: this is a delivery delay
+TK-242719,not_delivery,notes: amount deducted without order
+TK-247302,delivery,notes: bot tagged as billing; shipment issue
+TK-240526,delivery,notes: shipment not received; courier
+TK-249935,not_delivery,notes: promo code invalid
+TK-249644,delivery,notes: shipment not received; re-shipped (Billing agent did it)
+TK-247981,not_delivery,notes: invoice query

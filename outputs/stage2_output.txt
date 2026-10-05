@@ -1,0 +1,203 @@
+Analysis view: 11,641 tickets, 2025-01 .. 2026-06 (excluded: 139 pre-2025 rows, 0 duplicates)
+
+== 1. Monthly volume by bot category and by assigned_team
+  assigned share: {'Chat Frontline': '26.0%', 'Billing': '20.8%', 'Logistics': '16.4%', 'Email Frontline': '15.5%', 'Returns Desk': '9.0%', 'Voice Frontline': '7.7%', 'Escalations & Warranty': '4.5%'}
+  incl. 139 pre-2025 rows: Billing 21.8%, Logistics 16.2%
+  Jan-Jun 2026 assigned share: Billing 19.2%, Logistics 15.7%, Chat Frontline 27.6%
+
+== 2. Monthly volume by RESOLVING team (agent_id -> roster)
+                        assigned  resolved_by  diff
+Chat Frontline              3030         3078    48
+Logistics                   1905         2574   669
+Billing                     2425         1798  -627
+Email Frontline             1807         1658  -149
+Returns Desk                1049         1117    68
+Voice Frontline              900          766  -134
+Escalations & Warranty       525          650   125
+  Billing-assigned resolved by Logistics: 696 (28.7% of Billing-assigned)
+  into Logistics from other teams: 783; of which from Billing 696
+
+== 3. Workload by team (Tier 2 reported separately)
+  by ASSIGNED team
+                 tickets  share  median_handle_h  p75_handle_h  mean_transfers_helpdesk  repeat_rate  fr_breach_rate  breaches  csat_mean  csat_n  cost_per_ticket_inr  total_cost_inr
+assigned_team                                                                                                                                                                         
+Chat Frontline      3030  0.260            0.367         0.533                    0.119        0.194           0.075       226      3.629    1371              266.015        806025.0
+Billing             2425  0.208            0.450        24.450                    0.406        0.314           0.197       477      3.048    1090              404.247        980300.0
+Logistics           1905  0.164           24.433        72.267                    0.091        0.334           0.097       184      3.128     880              331.165        630870.0
+Email Frontline     1807  0.155            0.350         0.533                    0.113        0.191           0.110       198      3.614     808              321.812        581515.0
+Returns Desk        1049  0.090           48.233        72.233                    0.068        0.213           0.108       113      3.350     494              330.515        346710.0
+Voice Frontline      900  0.077            0.350         0.533                    0.136        0.193           0.057        51      3.645     417              567.622        510860.0
+  Tier 2 (not ranked against Tier 1)
+                        tickets  share  median_handle_h  p75_handle_h  mean_transfers_helpdesk  repeat_rate  fr_breach_rate  breaches  csat_mean  csat_n  cost_per_ticket_inr  total_cost_inr
+assigned_team                                                                                                                                                                                
+Escalations & Warranty      525  0.045          121.367        195.95                    0.119        0.124           0.082        43      3.281     228              332.105        174355.0
+  channel mix by assigned team
+                         chat  email  voice  social
+assigned_team                                      
+Chat Frontline          0.825  0.000  0.000   0.175
+Billing                 0.532  0.271  0.094   0.103
+Logistics               0.423  0.305  0.164   0.108
+Email Frontline         0.000  1.000  0.000   0.000
+Returns Desk            0.443  0.301  0.167   0.089
+Voice Frontline         0.000  0.000  1.000   0.000
+Escalations & Warranty  0.440  0.316  0.162   0.082
+  by RESOLVER team
+                        tickets  share  median_handle_h  p75_handle_h  mean_transfers_helpdesk  repeat_rate  fr_breach_rate  breaches  csat_mean  csat_n  cost_per_ticket_inr  total_cost_inr
+resolver_team                                                                                                                                                                                
+Chat Frontline             3078  0.264            0.350         0.533                    0.072        0.195           0.086       265      3.660    1385              270.724        833290.0
+Logistics                  2574  0.221           24.467        72.292                    0.399        0.313           0.164       423      2.885    1221              399.856       1029230.0
+Billing                    1798  0.154            0.383         0.600                    0.100        0.331           0.134       241      3.406     776              333.849        600260.0
+Email Frontline            1658  0.142            0.333         0.517                    0.115        0.194           0.095       158      3.599     730              316.161        524195.0
+Returns Desk               1117  0.096           24.550        72.217                    0.153        0.210           0.106       118      3.350     526              350.654        391680.0
+Voice Frontline             766  0.066            0.350         0.517                    0.010        0.196           0.046        35      3.671     365              537.983        412095.0
+Escalations & Warranty      650  0.056          122.000       197.317                    0.281        0.135           0.080        52      3.263     285              369.054        239885.0
+  overall: median handle 0.47 h; repeat rate (cust+sku) 24.0% vs (cust+category) 4.3%; breach 11.1%; CSAT 3.38 (n=5,288, 45.4% response)
+  repeat rate by assigned team (cust+category key): {'Billing': '8.8%', 'Chat Frontline': '2.6%', 'Email Frontline': '2.5%', 'Escalations & Warranty': '1.1%', 'Logistics': '5.3%', 'Returns Desk': '2.7%', 'Voice Frontline': '3.1%'}
+  total policy cost in view: Rs 4,030,635; breach credits Rs 452,200; helpdesk transfer cost Rs 396,195
+
+== 4. Capacity (roster) and breach clustering
+shift                   Day  Morning  Night  agents
+team                                               
+Billing                   1        3      0       4
+Chat Frontline            3        9      3      15
+Email Frontline           1        4      2       7
+Escalations & Warranty    1        5      0       6
+Logistics                 2        3      0       5
+Returns Desk              1        2      0       3
+Voice Frontline           3        1      0       4
+  Jan-Jun 2026 (6 months), 22 shifts/agent/month assumed:
+                  team          view  agents  tickets_per_month  tickets_per_agent_month  tickets_per_agent_shift  policy_cost_hours_per_agent_month  available_hours_per_agent_month  load_index   tier
+               Billing assigned_team       4             150.00                    37.50                     1.70                              85.24                              176        0.48 Tier 1
+             Logistics assigned_team       5             122.67                    24.53                     1.12                              45.68                              176        0.26 Tier 1
+          Returns Desk assigned_team       3              64.17                    21.39                     0.97                              37.74                              176        0.21 Tier 1
+       Email Frontline assigned_team       7             125.50                    17.93                     0.81                              32.34                              176        0.18 Tier 1
+       Voice Frontline assigned_team       4              66.67                    16.67                     0.76                              56.30                              176        0.32 Tier 1
+        Chat Frontline assigned_team      15             215.50                    14.37                     0.65                              21.68                              176        0.12 Tier 1
+Escalations & Warranty assigned_team       6              37.00                     6.17                     0.28                              11.54                              176        0.07 Tier 2
+             Logistics resolver_team       5             160.50                    32.10                     1.46                              74.10                              176        0.42 Tier 1
+               Billing resolver_team       4             115.17                    28.79                     1.31                              52.74                              176        0.30 Tier 1
+          Returns Desk resolver_team       3              70.50                    23.50                     1.07                              45.65                              176        0.26 Tier 1
+       Email Frontline resolver_team       7             113.83                    16.26                     0.74                              28.97                              176        0.16 Tier 1
+        Chat Frontline resolver_team      15             219.33                    14.62                     0.66                              21.84                              176        0.12 Tier 1
+       Voice Frontline resolver_team       4              57.17                    14.29                     0.65                              45.27                              176        0.26 Tier 1
+Escalations & Warranty resolver_team       6              45.00                     7.50                     0.34                              16.45                              176        0.09 Tier 2
+             Logistics    true_owner       5             175.00                    35.00                     1.59                              77.47                              176        0.44 Tier 1
+               Billing    true_owner       4              97.67                    24.42                     1.11                              45.50                              176        0.26 Tier 1
+          Returns Desk    true_owner       3              64.17                    21.39                     0.97                              37.74                              176        0.21 Tier 1
+       Email Frontline    true_owner       7             125.50                    17.93                     0.81                              32.34                              176        0.18 Tier 1
+       Voice Frontline    true_owner       4              66.67                    16.67                     0.76                              56.30                              176        0.32 Tier 1
+        Chat Frontline    true_owner      15             215.50                    14.37                     0.65                              21.68                              176        0.12 Tier 1
+Escalations & Warranty    true_owner       6              37.00                     6.17                     0.28                              11.54                              176        0.07 Tier 2
+  tickets resolved per agent per month by team x shift (Jan-Jun 2026):
+                                       count  mean   min   max
+resolver_team          resolver_shift                         
+Billing                Day                 1  49.5  49.5  49.5
+                       Morning             3  21.9  21.0  22.7
+Chat Frontline         Day                 3  30.3  29.3  30.8
+                       Morning             9   9.6   8.3  12.3
+                       Night               3  14.1  13.5  14.7
+Email Frontline        Day                 1  51.7  51.7  51.7
+                       Morning             4   8.3   7.5   8.7
+                       Night               2  14.4  12.5  16.3
+Escalations & Warranty Day                 1  18.8  18.8  18.8
+                       Morning             5   5.2   3.8   7.5
+Logistics              Day                 2  36.9  36.5  37.3
+                       Morning             3  28.9  27.7  30.3
+Returns Desk           Day                 1  33.0  33.0  33.0
+                       Morning             2  18.8  18.2  19.3
+Voice Frontline        Day                 3  11.9  10.2  13.2
+                       Morning             1  21.3  21.3  21.3
+  breach rate by assigned team x shift the ticket was created in:
+created_shift             Day  Morning  Night
+assigned_team                                
+Billing                 0.197    0.201  0.180
+Chat Frontline          0.066    0.082  0.081
+Email Frontline         0.124    0.094  0.109
+Escalations & Warranty  0.069    0.106  0.048
+Logistics               0.085    0.104  0.118
+Returns Desk            0.113    0.102  0.106
+Voice Frontline         0.046    0.071    NaN
+  breach rate by RESOLVING agent's team x shift (policy s3 reporting basis):
+                                        mean  sum  count
+resolver_team          resolver_shift                   
+Billing                Day             0.093   71    761
+                       Morning         0.164  170   1037
+Chat Frontline         Day             0.079  101   1285
+                       Morning         0.067   79   1176
+                       Night           0.138   85    617
+Email Frontline        Day             0.056   42    755
+                       Morning         0.129   64    498
+                       Night           0.128   52    405
+Escalations & Warranty Day             0.076   22    291
+                       Morning         0.084   30    359
+Logistics              Day             0.144  171   1184
+                       Morning         0.181  252   1390
+Returns Desk           Day             0.092   48    522
+                       Morning         0.118   70    595
+Voice Frontline        Day             0.055   26    473
+                       Morning         0.031    9    293
+  breach rate by assigned team x channel:
+channel                  chat  email  social  voice
+assigned_team                                      
+Billing                 0.274  0.128   0.084  0.083
+Chat Frontline          0.072    NaN   0.085    NaN
+Email Frontline           NaN  0.110     NaN    NaN
+Escalations & Warranty  0.052  0.145   0.070  0.047
+Logistics               0.104  0.122   0.083  0.038
+Returns Desk            0.099  0.161   0.032  0.074
+Voice Frontline           NaN    NaN     NaN  0.057
+
+== 5. Mis-routing: Billing-tagged tickets that are delivery work
+  Billing-tagged tickets: 2,425
+  signal prevalence: {'note_misroute': '319 (13.2%)', 'note_delivery': '912 (37.6%)', 'note_payment': '1,427 (58.8%)', 'resolver_logistics': '696 (28.7%)', 'msg_delivery': '848 (35.0%)'}
+resolver_team         Billing  Chat Frontline  Email Frontline  Logistics  Returns Desk   All
+work_type confidence                                                                         
+billing   high           1293               0                0          0             0  1293
+          medium            0              19               22         21            18    80
+delivery  high              0               0                0        660             0   660
+          medium          261               0                0          0             0   261
+unclear   low             110               3                1         15             2   131
+All                      1664              22               23        696            20  2425
+  label vs customer's message:
+msg_delivery  msg does not  msg says delivery
+work_type                                    
+billing               1373                  0
+delivery                93                828
+unclear                111                 20
+  delivery work: 921 (38.0%); high 660, medium 261
+  message agrees on delivery tickets: 89.9%; message says delivery on billing-labelled tickets: 0.0%
+  helpdesk only: delivery 37.2% of 1,558; legacy: 39.3%
+  monthly delivery share of Billing-tagged: min 30.5%, max 45.5%
+  hand-labelled sample: 60 tickets, 21 delivery by hand
+                        signal  tp  fp  fn  tn  accuracy  acc_95ci_low  acc_95ci_high  precision  recall
+       rule (notes + resolver)  21   0   0  39     1.000         0.940          1.000        1.0   1.000
+resolver team = Logistics only  16   0   5  39     0.917         0.819          0.964        1.0   0.762
+         customer message only  20   0   1  39     0.983         0.911          0.997        1.0   0.952
+  rule disagreements: [] (rule label [])
+                                     tickets  fr_breach_rate  median_fr_minutes  median_handle_h  median_created_to_resolved_h  mean_transfers_helpdesk  helpdesk_n  repeat_rate_cust_sku  repeat_rate_cust_category  csat_mean  csat_n  cost_per_ticket_inr
+group                                                                                                                                                                                                                                                       
+Billing-tagged, billing work            1373           0.092               27.0            0.350                         0.867                    0.093         896                 0.353                      0.114      3.533     600              327.578
+Billing-tagged, delivery work            921           0.363               36.0           47.433                        48.400                    0.919         580                 0.265                      0.052      2.354     432              527.182
+Billing-tagged, unclear                  131           0.130               30.0            0.500                         1.900                    0.195          82                 0.244                      0.076      3.190      58              343.511
+Logistics-tagged (bot got it right)     1905           0.097               26.0           24.433                        25.758                    0.091        1233                 0.334                      0.053      3.128     880              331.165
+  delivery-in-Billing tickets: breaches 334 (Rs 116,900), helpdesk transfers 533 (Rs 162,565) over 10 helpdesk months
+  excess breaches vs Logistics-tagged rate (9.7%): 245 over 18 months = Rs 85,765
+  Jan-Jun 2026: 314 delivery-in-Billing tickets (52/month), breaches 114, transfers 284 (Rs 86,620), breach credits Rs 39,900
+  Jan-Jun 2026 avoidable cost if routed straight to Logistics: transfers Rs 86,620 + excess breaches 85.8 x Rs 350 = Rs 30,045 -> Rs 116,665 per 6 months, ~Rs 233,330 a year (vs Rs 9,00,000 a year for two hires)
+  Jan-Jun 2026 Billing-tagged delivery tickets: 34.9% of Billing-tagged
+  'Other'-tagged tickets with delivery work in notes: 419 of 1,622 (25.8%); resolver teams {'Chat Frontline': 231, 'Email Frontline': 113, 'Voice Frontline': 53, 'Logistics': 11, 'Returns Desk': 9, 'Billing': 2}
+  team volume under each view (Tier 2 listed but not ranked):
+                        first-assigned (bot tag)  resolving agent's team  true owner (Billing delivery work -> Logistics)  true owner, high-confidence moves only  first-assigned (bot tag) / agent  resolving agent's team / agent  true owner (Billing delivery work -> Logistics) / agent  true owner, high-confidence moves only / agent
+Chat Frontline                              3030                    3078                                             3030                                    3030                             202.0                           205.2                                                    202.0                                           202.0
+Billing                                     2425                    1798                                             1504                                    1765                             606.2                           449.5                                                    376.0                                           441.2
+Logistics                                   1905                    2574                                             2826                                    2565                             381.0                           514.8                                                    565.2                                           513.0
+Email Frontline                             1807                    1658                                             1807                                    1807                             258.1                           236.9                                                    258.1                                           258.1
+Returns Desk                                1049                    1117                                             1049                                    1049                             349.7                           372.3                                                    349.7                                           349.7
+Voice Frontline                              900                     766                                              900                                     900                             225.0                           191.5                                                    225.0                                           225.0
+Escalations & Warranty                       525                     650                                              525                                     525                              87.5                           108.3                                                     87.5                                            87.5
+  [first-assigned (bot tag)] Tier 1 order: ['Chat Frontline', 'Billing', 'Logistics', 'Email Frontline', 'Returns Desk', 'Voice Frontline']; specialist order: ['Billing', 'Logistics', 'Returns Desk']; per-agent order: ['Billing', 'Logistics', 'Returns Desk', 'Email Frontline', 'Voice Frontline', 'Chat Frontline']
+  [resolving agent's team] Tier 1 order: ['Chat Frontline', 'Logistics', 'Billing', 'Email Frontline', 'Returns Desk', 'Voice Frontline']; specialist order: ['Logistics', 'Billing', 'Returns Desk']; per-agent order: ['Logistics', 'Billing', 'Returns Desk', 'Email Frontline', 'Chat Frontline', 'Voice Frontline']
+  [true owner (Billing delivery work -> Logistics)] Tier 1 order: ['Chat Frontline', 'Logistics', 'Email Frontline', 'Billing', 'Returns Desk', 'Voice Frontline']; specialist order: ['Logistics', 'Billing', 'Returns Desk']; per-agent order: ['Logistics', 'Billing', 'Returns Desk', 'Email Frontline', 'Voice Frontline', 'Chat Frontline']
+  [true owner, high-confidence moves only] Tier 1 order: ['Chat Frontline', 'Logistics', 'Email Frontline', 'Billing', 'Returns Desk', 'Voice Frontline']; specialist order: ['Logistics', 'Billing', 'Returns Desk']; per-agent order: ['Logistics', 'Billing', 'Returns Desk', 'Email Frontline', 'Voice Frontline', 'Chat Frontline']
+
+Wrote: assigned_to_resolver_flow.csv, assigned_vs_resolver_totals.csv, billing_delivery_share_by_month.csv, billing_label_vs_message.csv, billing_work_type_by_resolver.csv, breach_rate_by_resolver_team_shift.csv, breach_rate_by_team_hour.png, breach_rate_team_by_channel.csv, breach_rate_team_by_created_hour.csv, breach_rate_team_by_created_shift.csv, capacity_per_agent_jan_jun_2026.csv, misrouting_outcomes.csv, monthly_by_assigned_team.csv, monthly_by_assigned_team.png, monthly_by_category.csv, monthly_by_category.png, monthly_by_resolver_team.csv, monthly_by_resolver_team.png, roster_team_shift.csv, routing_rule_vs_hand_labels.csv, stage2_output.txt, team_ranking_by_view.csv, team_ranking_by_view.png, tickets_per_agent_month_jan_jun_2026.csv, tickets_team_by_created_hour.csv, workload_by_assigned_team.csv, workload_by_resolver_team.csv, workload_by_true_owner.csv

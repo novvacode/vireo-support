@@ -1,0 +1,7 @@
+work_type,confidence,Billing,Chat Frontline,Email Frontline,Logistics,Returns Desk,All
+billing,high,1293,0,0,0,0,1293
+billing,medium,0,19,22,21,18,80
+delivery,high,0,0,0,660,0,660
+delivery,medium,261,0,0,0,0,261
+unclear,low,110,3,1,15,2,131
+All,,1664,22,23,696,20,2425

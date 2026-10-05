@@ -1,0 +1,5 @@
+group,tickets,fr_breach_rate,median_fr_minutes,median_handle_h,median_created_to_resolved_h,mean_transfers_helpdesk,helpdesk_n,repeat_rate_cust_sku,repeat_rate_cust_category,csat_mean,csat_n,cost_per_ticket_inr
+"Billing-tagged, billing work",1373,0.092,27.0,0.35,0.867,0.093,896,0.353,0.114,3.533,600,327.578
+"Billing-tagged, delivery work",921,0.363,36.0,47.433,48.4,0.919,580,0.265,0.052,2.354,432,527.182
+"Billing-tagged, unclear",131,0.13,30.0,0.5,1.9,0.195,82,0.244,0.076,3.19,58,343.511
+Logistics-tagged (bot got it right),1905,0.097,26.0,24.433,25.758,0.091,1233,0.334,0.053,3.128,880,331.165

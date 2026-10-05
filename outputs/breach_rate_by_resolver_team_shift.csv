@@ -1,0 +1,17 @@
+resolver_team,resolver_shift,mean,sum,count
+Billing,Day,0.093,71,761
+Billing,Morning,0.164,170,1037
+Chat Frontline,Day,0.079,101,1285
+Chat Frontline,Morning,0.067,79,1176
+Chat Frontline,Night,0.138,85,617
+Email Frontline,Day,0.056,42,755
+Email Frontline,Morning,0.129,64,498
+Email Frontline,Night,0.128,52,405
+Escalations & Warranty,Day,0.076,22,291
+Escalations & Warranty,Morning,0.084,30,359
+Logistics,Day,0.144,171,1184
+Logistics,Morning,0.181,252,1390
+Returns Desk,Day,0.092,48,522
+Returns Desk,Morning,0.118,70,595
+Voice Frontline,Day,0.055,26,473
+Voice Frontline,Morning,0.031,9,293

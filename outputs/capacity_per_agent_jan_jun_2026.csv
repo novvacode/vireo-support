@@ -1,0 +1,22 @@
+team,view,agents,tickets_per_month,tickets_per_agent_month,tickets_per_agent_shift,policy_cost_hours_per_agent_month,available_hours_per_agent_month,load_index,tier
+Billing,assigned_team,4,150.0,37.5,1.705,85.244,176,0.484,Tier 1
+Chat Frontline,assigned_team,15,215.5,14.367,0.653,21.676,176,0.123,Tier 1
+Email Frontline,assigned_team,7,125.5,17.929,0.815,32.344,176,0.184,Tier 1
+Escalations & Warranty,assigned_team,6,37.0,6.167,0.28,11.539,176,0.066,Tier 2
+Logistics,assigned_team,5,122.667,24.533,1.115,45.68,176,0.26,Tier 1
+Returns Desk,assigned_team,3,64.167,21.389,0.972,37.736,176,0.214,Tier 1
+Voice Frontline,assigned_team,4,66.667,16.667,0.758,56.299,176,0.32,Tier 1
+Billing,resolver_team,4,115.167,28.792,1.309,52.745,176,0.3,Tier 1
+Chat Frontline,resolver_team,15,219.333,14.622,0.665,21.839,176,0.124,Tier 1
+Email Frontline,resolver_team,7,113.833,16.262,0.739,28.968,176,0.165,Tier 1
+Escalations & Warranty,resolver_team,6,45.0,7.5,0.341,16.451,176,0.093,Tier 2
+Logistics,resolver_team,5,160.5,32.1,1.459,74.096,176,0.421,Tier 1
+Returns Desk,resolver_team,3,70.5,23.5,1.068,45.648,176,0.259,Tier 1
+Voice Frontline,resolver_team,4,57.167,14.292,0.65,45.271,176,0.257,Tier 1
+Billing,true_owner,4,97.667,24.417,1.11,45.504,176,0.259,Tier 1
+Chat Frontline,true_owner,15,215.5,14.367,0.653,21.676,176,0.123,Tier 1
+Email Frontline,true_owner,7,125.5,17.929,0.815,32.344,176,0.184,Tier 1
+Escalations & Warranty,true_owner,6,37.0,6.167,0.28,11.539,176,0.066,Tier 2
+Logistics,true_owner,5,175.0,35.0,1.591,77.472,176,0.44,Tier 1
+Returns Desk,true_owner,3,64.167,21.389,0.972,37.736,176,0.214,Tier 1
+Voice Frontline,true_owner,4,66.667,16.667,0.758,56.299,176,0.32,Tier 1
