@@ -1,0 +1,94 @@
+== Raw row counts
+  tickets     11,780
+  orders      15,000
+  customers    9,500
+  products        14
+  agents          44
+  tickets by source: {'helpdesk': 7728, 'legacy_fd': 4052}
+  ticket_id unique: True
+
+== 1. Legacy resolved_at UTC -> IST
+  legacy resolved < created : before 2,379  after 0
+  legacy resolved < first_response: before 2,575  after 0
+  helpdesk resolved < created: 0
+  legacy rows shifted: 3,853
+  median resolution h by channel, legacy before: {'chat': -4.87, 'email': -0.3, 'social': -3.22, 'voice': -4.19}
+  median resolution h by channel, legacy after : {'chat': 0.63, 'email': 5.2, 'social': 2.28, 'voice': 1.31}
+  median resolution h by channel, helpdesk     : {'chat': 0.6, 'email': 4.97, 'social': 2.52, 'voice': 1.2}
+  headline raw                       n=11,780  Billing=21.8%  Logistics=16.2%  med_res=1.32h  neg_res=2,379  breach=11.4%  csat=3.375
+  headline after tz fix              n=11,780  Billing=21.8%  Logistics=16.2%  med_res=2.05h  neg_res=0  breach=11.4%  csat=3.375
+
+== 2. Rows outside Jan 2025 - Jun 2026
+  out of range: 139  by system {'legacy_fd': 139}  range 2024-06-20 01:36:00 .. 2024-12-31 11:53:00
+  out-of-range by category: {'Billing & Payments': 139}
+  headline in-scope only             n=11,641  Billing=20.8%  Logistics=16.4%  med_res=2.03h  neg_res=0  breach=11.1%  csat=3.384
+
+== 3. Duplicates / re-imports
+  strict pairs (same cust+sku, <=48h or 5h30m apart, text sim>=0.85): 0
+  loose pairs (same cust+sku within 1h, any text): 12  max text sim 0.6164383561643836
+  cross-system same-customer pairs: 3,655; created exactly 5h30m apart: 0
+  cross-system same-customer pairs with text sim >= 0.85: 1
+  cross-system pairs with identical normalised text: 430; same customer: 1
+  order_ids on tickets in both systems: 181 orders, 293 pairs, min gap 3.4 days, max text sim 0.71
+  ticket_id ranges: {'helpdesk': {'min': 'TK-245081', 'max': 'TK-254672'}, 'legacy_fd': {'min': 'TK-240001', 'max': 'TK-245080'}}; id-vs-time inversions {'helpdesk': 0, 'legacy_fd': 0}
+  rows sharing an exact message text: 430 across 377 customers (stock phrases)
+
+== 4. Order join
+  order_id blank in raw: 4,017 (34.1%)
+  order_match: {'explicit': 7763, 'fallback_unique': 3171, 'fallback_ambiguous': 649, 'message': 197}
+  ambiguous candidates per ticket: {2: 538, 3: 98, 4: 5, 5: 8}
+  tickets with a confident order link: before 65.9%  after 94.5%
+  ticket created before linked order: {'presale': 201, 'implausible': 101}
+    by link type: {'implausible': {'explicit': 79, 'fallback_unique': 20, 'message': 2}, 'presale': {'explicit': 134, 'fallback_unique': 67, 'message': 0}}
+    implausible by category: {'Other': 15, 'Delivery & Shipping': 13, 'Audio Quality': 12, 'Returns & Refunds': 11, 'Connectivity': 10}
+    presale by category: {'Product Enquiry': 166, 'Other': 27, 'App & Firmware': 2, 'Returns & Refunds': 2, 'Delivery & Shipping': 1}
+
+== 5. Agents
+  roster rows 44, unique agent_id 44, unique names 43
+  shared names: [['A3006', 'Om Sharma', 'Chat Frontline'], ['A3029', 'Om Sharma', 'Logistics']]; tickets resolved: {'A3029': 629, 'A3006': 136}
+  frontline team vs channel: {'Chat Frontline': {'chat': 2500, 'email': 0, 'social': 530, 'voice': 0}, 'Email Frontline': {'chat': 0, 'email': 1807, 'social': 0, 'voice': 0}, 'Voice Frontline': {'chat': 0, 'email': 0, 'social': 0, 'voice': 900}}
+  categories per assigned team: {'Billing': 1, 'Chat Frontline': 7, 'Email Frontline': 7, 'Escalations & Warranty': 1, 'Logistics': 1, 'Returns Desk': 1, 'Voice Frontline': 7}
+  roster rows with to_date: 0; agents per team {'Chat Frontline': 15, 'Email Frontline': 7, 'Escalations & Warranty': 6, 'Logistics': 5, 'Voice Frontline': 4, 'Billing': 4, 'Returns Desk': 3}
+  tickets whose agent_id is missing from roster: 0
+  resolved by a team other than assigned: 2,063
+  Billing-assigned resolved by Logistics agent: 795
+  helpdesk: other-team resolver but transfers==0: 341 of 1,293 other-team resolutions
+  helpdesk: same-team resolver but transfers>0: 138
+  mean transfers by assigned team (helpdesk): {'Billing': 0.406, 'Chat Frontline': 0.119, 'Email Frontline': 0.113, 'Escalations & Warranty': 0.119, 'Logistics': 0.091, 'Returns Desk': 0.068, 'Voice Frontline': 0.136}
+
+== 6. Status / CSAT / first response
+  legacy open/pending (stale): 199
+  status vs resolved_at blank: {False: {'closed': 1069, 'open': 0, 'pending': 0, 'resolved': 10128}, True: {'closed': 0, 'open': 336, 'pending': 247, 'resolved': 0}}
+  CSAT response rate: 45.4%; on closed (auto) tickets 48.1%
+  CSAT present on open/pending: 247
+  CSAT mean (blanks excluded) 3.375 vs blanks-as-0 (WRONG) 1.531
+  first response at 0 minutes: 222 by channel {'chat': 222}
+  first_response blank: 0
+  FR breach rate overall: 11.4% (1,340)
+  FR breach rate by assigned team (helpdesk): {'Billing': '19.2%', 'Chat Frontline': '7.2%', 'Email Frontline': '11.8%', 'Escalations & Warranty': '7.2%', 'Logistics': '9.1%', 'Returns Desk': '11.6%', 'Voice Frontline': '4.8%'}
+
+== 7. Transfers blank on legacy
+  transfers blank by system: {'helpdesk': 0, 'legacy_fd': 4052}
+  mean transfers if blanks were 0 (WRONG): 0.110 vs helpdesk only 0.168
+
+== 8. Refunds
+  refund rows 1,894; by system {'helpdesk': 1238, 'legacy_fd': 656}
+  amount w/o code 0, code w/o amount 0
+  median refund / retail price by system: {'helpdesk': 0.9, 'legacy_fd': 0.9}
+  refund amount quantiles by system: {'helpdesk': {0.0: 36.0, 0.5: 2499.0, 1.0: 12998.0}, 'legacy_fd': {0.0: 32.0, 0.5: 2249.0, 1.0: 13998.0}}
+  refund > linked order value: 0
+  GW-OTHER refunds: 35, over Rs 500 cap: 29
+  refund & replacement on same TICKET: 2
+  refund & replacement on same ORDER (explicit/message/unique-fallback links): 131 orders, 364 tickets on those orders
+  ... using only explicit/message order ids: 78 orders
+
+== 9. Volume per week (for the '650 tickets a week' question)
+  full weeks Jan-Jun 2026: mean 182, min 161, max 214
+  Jun-Oct 2025 monthly total: {'2025-06': 439, '2025-07': 462, '2025-08': 695, '2025-09': 671, '2025-10': 847}; Pulse 2 (VA-EB-PL2): {'2025-06': 5, '2025-07': 58, '2025-08': 217, '2025-09': 214, '2025-10': 310}
+  legacy monthly: {'2025-01': 314, '2025-02': 368, '2025-03': 462, '2025-04': 449, '2025-05': 424, '2025-06': 439, '2025-07': 462, '2025-08': 695, '2025-09': 300}
+  monthly Jan-Jun 2026: {Period('2026-01', 'M'): 812, Period('2026-02', 'M'): 733, Period('2026-03', 'M'): 780, Period('2026-04', 'M'): 832, Period('2026-05', 'M'): 756, Period('2026-06', 'M'): 776}
+
+== BEFORE / AFTER
+  raw (all rows, as exported)        n=11,780  Billing=21.8%  Logistics=16.2%  med_res=1.32h  neg_res=2,379  breach=11.4%  csat=3.375
+  cleaned analysis view              n=11,641  Billing=20.8%  Logistics=16.4%  med_res=2.03h  neg_res=0  breach=11.1%  csat=3.384
+  rows: raw 11,780 -> analysis view 11,641 (out of range 139, duplicates 0)
