@@ -174,7 +174,7 @@ bahut pareshan hu
 pls reply",Returns & Refunds,Returns Desk,Returns Desk,unclear,low,helpdesk,refund_not_received,0.95,rules,Returns Desk,False,"single rule; matched: refund, refund was promised",Returns Desk,True,True,True,True,,False,True,False,False
 TK-252442,refund_not_received,False,,low_conf,social,"hello ji
 the reutrn was accepted but the amount is nowhere in my account
-anyone there",Billing & Payments,Billing,Billing,billing,high,helpdesk,unclear,0.3,none,Chat Frontline,True,"tie between app_firmware_login, refund_not_received",Returns Desk,False,False,False,False,abstained (Unclear),True,True,False,False
+anyone there",Billing & Payments,Billing,Billing,billing,high,helpdesk,unclear,0.3,none,Chat Frontline,True,"tie between refund_not_received, app_firmware_login",Returns Desk,False,False,False,False,abstained (Unclear),True,True,False,False
 TK-253340,battery_charging,False,,bot_disagree,email,"hello ji
 battery life has dropped to almost nothing
 kuch karo

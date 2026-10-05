@@ -1,0 +1,7 @@
+gold                   version              metric   k   n  value  ci95_low  ci95_high
+  v1 rules v1 (frozen 52f8a5e)   category accuracy 179 190  0.942     0.899      0.967
+  v1 rules v1 (frozen 52f8a5e) owner-team accuracy 183 190  0.963     0.926      0.982
+  v1 rules v1 (frozen 52f8a5e) abstained (Unclear)   8 190  0.042     0.021      0.081
+  v1 rules v2 (frozen f7d0830)   category accuracy 187 190  0.984     0.955      0.995
+  v1 rules v2 (frozen f7d0830) owner-team accuracy 189 190  0.995     0.971      0.999
+  v1 rules v2 (frozen f7d0830) abstained (Unclear)   2 190  0.011     0.003      0.038

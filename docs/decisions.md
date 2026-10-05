@@ -77,3 +77,37 @@ Format: Decision / Why / What it changes.
 18. **Charts are static PNG small multiples (one panel per team or category), with 3 series at most in comparison charts.**
     Why: 11 categories on one line chart can't be read, and the reference palette validates only 3 series all-pairs.
     What it changes: presentation only.
+
+## Stage 3–4: categoriser and validation (2026-10-05)
+
+19. **Taxonomy: 13 need-based categories + Unclear. Owners as approved: Cancel/change → Frontline; Refund not received → Returns Desk, except a refund for a double charge → Payment (Billing).**
+    Why: designed from 208 real messages. Policy §6 names no owner for cancellations, and Frontline resolves most of them today.
+    What it changes: owner_team in every output.
+
+20. **The categoriser reads only customer_message (plus channel for the Frontline owner and date for the chart). agent_notes is excluded at read time and a test proves it.**
+    Why: notes are written after the work and would leak the answer.
+    What it changes: notes can serve as an independent weak check.
+
+21. **Cheap-first: rules → TF-IDF trained at run time on rule-confident rows → optional LLM below 0.6 confidence. The LLM is off by default and uses claude-opus-5-5 at low effort.**
+    Why: the brief requires an offline default. Shipping no model file keeps the repo small. The model follows the API guidance default, and `VIREO_LLM_MODEL` can override it.
+    What it changes: about 4% of tickets end as Unclear offline (456 of 11,780 in the v2 run).
+
+22. **USD→INR for the LLM cost log defaults to 88 (env `VIREO_USD_INR`).**
+    Why: no rate is given in the brief.
+    What it changes: the cost_inr column only. No paid calls have been made.
+
+23. **Validation labels are AI-adjudicated (by Claude), blind to bot tag, prediction, notes and stratum, and committed before scoring.**
+    Why: the user asked for no manual labelling, and there is no human ground truth.
+    What it changes: accuracy figures are upper-bound estimates; see docs/validation.md §2.5.
+
+24. **Owner-team accuracy is reported alongside category accuracy, and a wrong owner counts as a "costly" error.**
+    Why: routing is the decision with a rupee cost (transfer Rs 305, breach risk). Category mix-ups inside one owner team cost nothing.
+    What it changes: the headline comparison with the bot.
+
+25. **Experiment-1 results are kept unchanged. Fixes motivated by them (rules v2) were evaluated only on a fresh gold v2 that excludes dev, gold v1 and the 30 pool tickets viewed while building v2.**
+    Why: re-scoring a tuned model on the set it was tuned on is contamination.
+    What it changes: v2's measured gain is +2 tickets on 120 (not significant), reported as such.
+
+26. **Each experiment re-runs with the rules frozen for it. v1 is archived byte-for-byte in validation_archive/rules_v1.py.**
+    Why: otherwise re-running experiment 1 would silently use v2.
+    What it changes: `python -m src.validate --tag v1` reproduces 179/190.

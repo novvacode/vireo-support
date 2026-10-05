@@ -1,0 +1,33 @@
+ticket_id,stratum,channel,gold_label,tool_pred,tool_confidence,tool_method,error_type,gold_owner,tool_owner,costly_error,cost_note,bot_category,resolver_team,ambiguous,label_note,hinglish,short,customer_message,rule_reason
+TK-247881,paid_but,chat,order_not_arrived,unclear,0.0,none,abstained (Unclear),Logistics,Chat Frontline,True,wrong owner team -> likely transfer (Rs 305) + breach risk,Billing & Payments,Logistics,False,,False,False,"Product: Pulse 2
+Purchased: 23 Nov
+Issue: the payment went through on the first try, the order has not gone through my front door yet
+Tried: checked the tracking page daily
+Expected: refund",no decisive phrase
+TK-249565,random,chat,damaged_or_wrong_item,battery_charging,0.5,tfidf,other: damaged_or_wrong_item -> battery_charging,Logistics,Chat Frontline,True,wrong owner team -> likely transfer (Rs 305) + breach risk,Delivery & Shipping,Logistics,False,,False,False,"Product: the fit band
+Order: VR892857
+Purchased: 22 Jan
+Issue: there's a dent on the case straight out of the box
+Tried: took photos
+Expected: resolution",no decisive phrase
+TK-254453,low_conf,email,sound_or_hardware,unclear,0.0,none,abstained (Unclear),Email Frontline,Email Frontline,False,same owner team -> no routing cost,Warranty & Repair,Escalations & Warranty,True,'tap ten times for one swipe' read as touch hardware fault,False,False,"Product: Nexa 2
+Order: VR906140
+Purchased: 14-06-2026
+Issue: I have to tap ten times for one swipe to register
+Tried: updated firmware
+Expected: callback",no decisive phrase
+TK-252089,voice,voice,pairing_connection,unclear,0.0,none,abstained (Unclear),Voice Frontline,Voice Frontline,False,same owner team -> no routing cost,Connectivity,Voice Frontline,False,,False,False,"[IVR transcript] keeps losing my phone if i walk to the other room, vr900127, please resole asap",no decisive phrase
+TK-246528,hinglish,chat,return_pickup,unclear,0.0,none,abstained (Unclear),Returns Desk,Chat Frontline,True,wrong owner team -> likely transfer (Rs 305) + breach risk,Returns & Refunds,Returns Desk,False,,True,False,"hi sir
+the app said pickup today, that was on 03-10-2025
+around Diwali se
+pulse2",no decisive phrase
+TK-243095,multi_issue,social,order_not_arrived,unclear,0.3,none,abstained (Unclear),Logistics,Chat Frontline,True,wrong owner team -> likely transfer (Rs 305) + breach risk,Billing & Payments,Logistics,False,,False,False,"money went out of my account 12 days ago and i have nothing in hand, vr883443, kindly look into it","tie between app_firmware_login, order_not_arrived"
+TK-243982,random,chat,return_pickup,unclear,0.0,none,abstained (Unclear),Returns Desk,Chat Frontline,True,wrong owner team -> likely transfer (Rs 305) + breach risk,Returns & Refunds,Returns Desk,True,'packed the box a week ago & it's still here' read as return pickup not done,False,False,"hi
+packed the box a week ago & it's still here
+the pulse 2 earbuds
+urgent",no decisive phrase
+TK-245528,voice,voice,sound_or_hardware,unclear,0.0,none,abstained (Unclear),Voice Frontline,Voice Frontline,False,same owner team -> no routing cost,Audio Quality,Voice Frontline,True,'one of them is just decoration' - one bud dead; cause (battery vs sound) not stated; labelled sound/hardware,False,False,[IVR transcript] hello one of them is just decoration at this poitn pulse earbuds pls reply,no decisive phrase
+TK-254402,voice,voice,battery_charging,unclear,0.0,none,abstained (Unclear),Voice Frontline,Voice Frontline,False,same owner team -> no routing cost,Charging & Battery,Billing,False,,False,False,"hey
+plugging in does nothing on the case, cable works on my phone
+pulse 2 buds
+hello??",no decisive phrase

@@ -19,7 +19,7 @@ import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
 from src import routing  # noqa: E402
-from src.gold_sample import HINGLISH, frozen_predictions  # noqa: E402
+from src.gold_sample import HINGLISH, RULES_FOR_TAG, frozen_predictions  # noqa: E402
 from src.stage2 import wilson  # noqa: E402
 from src.workload import TRANSFER_COST_INR  # noqa: E402
 from vireo.taxonomy import BOT_COMPATIBLE, LABELS, NAME, owner_team  # noqa: E402
@@ -59,7 +59,7 @@ def error_type(gold: str, pred: str) -> str:
 def build_table(tag: str) -> pd.DataFrame:
     gold = pd.read_csv(LAB / f"gold_{tag}_labels.csv")
     strata = pd.read_csv(LAB / f"gold_{tag}_strata.csv")
-    v, pred = frozen_predictions()
+    v, pred = frozen_predictions(RULES_FOR_TAG.get(tag, "v2"))
     v = routing.label_work_type(v)  # agent notes -> work type: WEAK PROXY, used only for the independent check
     meta = v.set_index("ticket_id")[["channel", "customer_message", "category", "assigned_team", "resolver_team",
                                      "agent_notes", "work_type", "confidence", "source_system"]]
@@ -165,14 +165,14 @@ def main(tag: str):
     res = pd.concat([res, pd.DataFrame(weak)], ignore_index=True)
 
     # population-wide weak check on Billing-tagged tickets (agent notes say delivery?)
-    v, pred = frozen_predictions()
+    v, pred = frozen_predictions(RULES_FOR_TAG.get(tag, "v2"))
     v = routing.label_work_type(v).merge(pred[["ticket_id", "new_category", "confidence"]], on="ticket_id")
     b = v[v["assigned_team"] == "Billing"]
     notes_dlv = b["work_type"].eq("delivery")
     tool_dlv = b["new_category"].isin(DELIVERY)
     xt = pd.crosstab(notes_dlv.map({True: "notes: delivery work", False: "notes: not delivery"}),
                      tool_dlv.map({True: "tool: delivery category", False: "tool: other"}))
-    xt.to_csv(OUT / "validation_weak_check_billing_notes.csv")
+    xt.to_csv(OUT / ("validation_weak_check_billing_notes.csv" if tag == "v1" else f"validation_weak_check_billing_notes_{tag}.csv"))
     res = pd.concat([res, pd.DataFrame([
         rate_row(exp, "all Billing-tagged tickets (population)", "our tool",
                  "WEAK PROXY: tool says delivery when notes say delivery (recall)", tool_dlv[notes_dlv]),

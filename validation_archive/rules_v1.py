@@ -30,12 +30,6 @@ CLOSING_DEMANDS = (
     r"|this is very disappointing|really frustrating|not what i expected from vireo"
     r"|i have been a loyal customer (?:&|and) this is how (?:u|you) treat me"
 )
-RULES_VERSION = "v2"  # v1 = frozen at validation experiment 1; v2 = post-test changes, see docs/validation.md
-# v2: "Tried" steps ("I already checked the invoice", "I called the courier") describe what the customer did,
-# not what went wrong; they caused v1 errors ("wrong product delivered. i checked the invoice" -> invoice).
-# Kept deliberately narrow: stripping every "I tried/checked ..." step removed real evidence
-# ("I checked mic permissions", "I checked the tracking page") and turned ~150 messages Unclear.
-TRIED_STEPS = r"\bi (?:have |had )?(?:already )?(?:re)?che?c?ke?d (?:the |my )?(?:invoice|order)\b"
 HINGLISH_FILLERS = (
     r"\b(?:bhai|sir ji|ji|kuch karo|bahut pareshan hu|itna paisa diya hai|abhi tak kuch nahi hua"
     r"|please jaldi|pls jaldi|jaldi|se|hello\?\?|anyone there|urgent|namaste)\b"
@@ -51,7 +45,7 @@ TYPO = {
     r"\brepa+ir\b": "repair", r"\bbat+e?ry\b": "battery", r"\bchar+ging\b|\bcharrging\b": "charging",
     r"\bfirm?wa?e?r\b|\bfirmwaer\b": "firmware", r"\bupda?e\b|\bupdae\b": "update",
     r"\bwaiitng\b|\bwaitinng\b": "waiting", r"\bpackage\b|\bpakage\b|\bpcakage\b": "package",
-    r"\bstatsu\b": "status", r"\bmicrophone\b": "mic", r"\breu?trn\b|\bretrun\b|\breutrn\b": "return",
+    r"\bstatsu\b": "status", r"\bmicrophone\b": "mic",
 }
 
 
@@ -66,7 +60,6 @@ def normalise(msg: str) -> str:
     for pat, rep in TYPO.items():
         s = re.sub(pat, rep, s)
     s = re.sub(CLOSING_DEMANDS, " ", s)
-    s = re.sub(TRIED_STEPS, " ", s)
     s = re.sub(HINGLISH_FILLERS, " ", s)
     s = re.sub(PRODUCT_NAMES, " PRODUCT ", s)
     return re.sub(r"\s+", " ", s).strip()
@@ -89,10 +82,7 @@ P = {
     "damaged_or_wrong_item": [
         (2, r"damaged|crack|crushed|kicked|arrived broken|broken in the box|wrong (?:item|product|model|size|variant)"
             r"|not what i (?:paid for|ordered)|what'?s inside is not|missing from the box|empty box|seal (?:was )?broken"
-            r"|before i (?:even )?switched it on|dented"
-            r"|(?:got|received|delivered|sent)(?: me)? (?:a |the )?(?:different|wrong) colou?r|different colou?r than (?:i )?ordered"
-            r"|ordered \w+,? (?:but )?got \w+|got \w+ instead|not what i asked for|got something else"
-            r"|completely different (?:thing|product|item)"),
+            r"|before i (?:even )?switched it on|dented"),
     ],
     "cancel_or_change": [
         (2, r"cancel|stop the shipment|don'?t ship|ordered by mistake|change of mind|wrong colou?r"
@@ -135,8 +125,7 @@ P = {
     ],
     "battery_charging": [
         (2, r"battery|(?<!card )charg(?!ed (?:two|2|twice))|drain|full to empty|dies? by|\b0 ?%|0 percent|percent|lasts? (?:only )?\d+ hours|paperweight"
-            r"|lights up when i put|same battery level|dead every morning|backup"
-            r"|promised \d+ hours|i get maybe \d+|used to last"),
+            r"|lights up when i put|same battery level|dead every morning|backup"),
     ],
     "app_firmware_login": [
         (2, r"firmware|(?:after|since) the (?:last )?update|update (?:is )?stuck|update failed|update prompt|stuck at \d+ ?%"
@@ -224,7 +213,7 @@ def classify(message: str) -> RuleResult:
     if len(strong) == 1:
         (c,) = strong
         return pick(c, 0.95, "single rule")
-    best = sorted(strong, key=lambda c: (-sc[c], c))  # name breaks ties: deterministic reason text
+    best = sorted(strong, key=lambda c: -sc[c])
     if sc[best[0]] > sc[best[1]]:
         return pick(best[0], 0.6, "highest rule score among several")
     return RuleResult("unclear", 0.3, sc, "tie between " + ", ".join(best[:2]), True)

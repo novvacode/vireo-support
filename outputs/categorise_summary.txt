@@ -1,0 +1,9 @@
+input: data\99ca137e-844d-47d7-8ce8-bf60ce272ba3-tickets.csv (11,780 tickets)
+method: {'rules': 10645, 'tfidf': 679, 'none': 456}
+unclear: 456
+bot tag disagrees with customer need: 3,631 (30.8%)
+owner team differs from bot-assigned team: 2,469
+charted 11,641 tickets created 2025-01-01..2026-06-30
+LLM / paid API: {'llm': 'off (offline default)'}
+runtime: 5.8s
+new_category counts: {'Order not arrived': 2447, 'Pairing & connection': 1070, 'App, firmware or login': 1069, 'Battery & charging': 874, 'Sound, mic or hardware fault': 823, 'Payment taken, no order / charged twice': 813, 'Invoice, GST or price/discount': 810, 'Cancel or change an order': 789, 'Refund not received': 645, 'Damaged or wrong item received': 627, 'Product question': 591, 'Unclear': 456, 'Return pickup not done': 419, 'Warranty or repair status': 347}

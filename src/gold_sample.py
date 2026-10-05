@@ -36,17 +36,35 @@ PAID = r"paid|payment|debited|deducted|money|transaction|rs ?\d"
 DELIVERY = r"deliver|received|in hand|tracking|courier|show up|doorstep|where is my|processing|not moved"
 
 
-def frozen_predictions() -> tuple[pd.DataFrame, pd.DataFrame]:
+# Each experiment is tied to the rules version that was frozen when it ran.
+RULES_FOR_TAG = {"v1": "v1", "v2": "v2"}
+
+
+def rules_module(version: str):
+    if version == "v1":
+        from validation_archive import rules_v1  # byte copy of vireo/rules.py at commit 52f8a5e
+        return rules_v1
+    from vireo import rules
+    return rules
+
+
+def frozen_predictions(rules_version: str = "v2") -> tuple[pd.DataFrame, pd.DataFrame]:
+    import vireo.categorise as cat
     t, _ = clean.clean_tickets(load_all())
     v = clean.analysis_view(t).reset_index(drop=True)
     df = v[["ticket_id", "created_at", "channel", "category", "assigned_team", "customer_message"]].copy()
     df["created_at"] = df["created_at"].astype(str)
-    pred, _ = categorise(df, use_llm=False)
+    current = cat.rules
+    cat.rules = rules_module(rules_version)
+    try:
+        pred, _ = categorise(df, use_llm=False)
+    finally:
+        cat.rules = current
     return v, pred
 
 
 def draw(seed: int, tag: str, exclude: set[str], strata_spec=STRATA) -> pd.DataFrame:
-    v, pred = frozen_predictions()
+    v, pred = frozen_predictions(RULES_FOR_TAG.get(tag, "v2"))
     p = v[["ticket_id", "channel", "customer_message"]].merge(
         pred[["ticket_id", "bot_disagrees", "multi_issue", "confidence", "method"]], on="ticket_id")
     p = p[~p["ticket_id"].isin(exclude)]

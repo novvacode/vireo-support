@@ -1,0 +1,15 @@
+gold_label,Account & Login,App & Firmware,Audio Quality,Billing & Payments,Charging & Battery,Connectivity,Delivery & Shipping,Other,Product Enquiry,Returns & Refunds,Warranty & Repair
+order_not_arrived,0,0,0,16,0,0,5,4,0,0,0
+damaged_or_wrong_item,0,0,0,0,0,0,4,0,0,4,0
+cancel_or_change,0,0,0,0,0,0,1,7,0,0,0
+payment_issue,0,0,0,4,0,0,0,1,0,0,0
+invoice_or_price,0,0,0,6,0,0,0,2,0,0,0
+return_pickup,0,0,0,0,0,0,1,0,0,3,0
+refund_not_received,0,0,0,3,0,0,0,0,0,6,0
+warranty_status,0,0,0,0,0,0,0,1,0,0,3
+pairing_connection,0,1,0,0,0,13,0,1,0,0,0
+sound_or_hardware,0,0,7,0,0,1,0,1,0,0,4
+battery_charging,0,1,0,0,9,0,0,0,0,0,0
+app_firmware_login,2,4,0,0,0,1,0,1,0,0,0
+product_question,0,0,0,0,0,0,0,1,2,0,0
+unclear,0,0,0,0,0,0,0,0,0,0,0

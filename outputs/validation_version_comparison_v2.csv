@@ -1,0 +1,7 @@
+gold,version,metric,k,n,value,ci95_low,ci95_high
+v2,rules v1 (frozen 52f8a5e),category accuracy,109,120,0.9083,0.8433,0.948
+v2,rules v1 (frozen 52f8a5e),owner-team accuracy,113,120,0.9417,0.8845,0.9715
+v2,rules v1 (frozen 52f8a5e),abstained (Unclear),8,120,0.0667,0.0342,0.1261
+v2,rules v2 (frozen f7d0830),category accuracy,111,120,0.925,0.8636,0.96
+v2,rules v2 (frozen f7d0830),owner-team accuracy,115,120,0.9583,0.9062,0.9821
+v2,rules v2 (frozen f7d0830),abstained (Unclear),8,120,0.0667,0.0342,0.1261

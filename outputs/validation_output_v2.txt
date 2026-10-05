@@ -1,0 +1,74 @@
+== experiment v2: 120 gold tickets; labels {'order_not_arrived': 25, 'pairing_connection': 15, 'sound_or_hardware': 13, 'battery_charging': 10, 'refund_not_received': 9, 'invoice_or_price': 8, 'app_firmware_login': 8, 'damaged_or_wrong_item': 8, 'cancel_or_change': 8, 'payment_issue': 5, 'warranty_status': 4, 'return_pickup': 4, 'product_question': 3}
+                                 subset        system                                                             metric  correct     n  value  ci95_low  ci95_high
+                               all gold      our tool                                                  category accuracy      111   120  0.925     0.864      0.960
+                               all gold      our tool                                                owner-team accuracy      115   120  0.958     0.906      0.982
+                               all gold    intake bot                                      category-compatible (lenient)       68   120  0.567     0.477      0.652
+                               all gold    intake bot                                                owner-team accuracy       83   120  0.692     0.604      0.767
+           random (population estimate)      our tool                                                  category accuracy       58    60  0.967     0.886      0.991
+           random (population estimate)      our tool                                                owner-team accuracy       58    60  0.967     0.886      0.991
+           random (population estimate)    intake bot                                      category-compatible (lenient)       42    60  0.700     0.575      0.801
+           random (population estimate)    intake bot                                                owner-team accuracy       49    60  0.817     0.701      0.894
+                  hard-case strata only      our tool                                                  category accuracy       53    60  0.883     0.778      0.942
+                  hard-case strata only      our tool                                                owner-team accuracy       57    60  0.950     0.863      0.983
+                  hard-case strata only    intake bot                                      category-compatible (lenient)       26    60  0.433     0.316      0.559
+                  hard-case strata only    intake bot                                                owner-team accuracy       34    60  0.567     0.441      0.684
+                               all gold      our tool                        WEAK PROXY: owner family == resolver family       89   120  0.742     0.657      0.812
+                               all gold    intake bot                     WEAK PROXY: assigned family == resolver family      100   120  0.833     0.757      0.889
+                               all gold AI gold label                   WEAK PROXY: gold owner family == resolver family       94   120  0.783     0.701      0.848
+all Billing-tagged tickets (population)      our tool    WEAK PROXY: tool says delivery when notes say delivery (recall)      885   921  0.961     0.946      0.972
+all Billing-tagged tickets (population)      our tool WEAK PROXY: notes say delivery when tool says delivery (precision)      885   905  0.978     0.966      0.986
+               all tickets (population)      our tool                        WEAK PROXY: owner family == resolver family     9391 11641  0.807     0.799      0.814
+               all tickets (population)    intake bot                     WEAK PROXY: assigned family == resolver family    10292 11641  0.884     0.878      0.890
+
+  by stratum / hard-case flag (tool category acc | tool owner acc | bot owner acc):
+    stratum: bot_disagree            n= 15  100% | 100% | 20%
+    stratum: hinglish                n=  8  88% | 88% | 75%
+    stratum: short                   n=  8  100% | 100% | 100%
+    stratum: voice                   n=  8  62% | 100% | 88%
+    stratum: multi_issue             n=  8  88% | 88% | 62%
+    stratum: low_conf                n=  8  88% | 100% | 50%
+    stratum: paid_but                n=  5  80% | 80% | 20%
+    any ticket with hinglish         n= 11  91% | 91% | 82%
+    any ticket with short            n= 17  100% | 100% | 82%
+    any ticket with voice            n= 26  88% | 100% | 81%
+    any ticket with ambiguous        n=  5  40% | 80% | 80%
+
+  weak check, Billing-tagged population (agent notes vs tool):
+new_category          tool: delivery category  tool: other
+work_type                                                 
+notes: delivery work                      885           36
+notes: not delivery                        20         1484
+
+  per category (tool):
+             category  gold_n  predicted_n  precision  recall   f1
+    order_not_arrived      25           23        1.0    0.92 0.96
+damaged_or_wrong_item       8            7        1.0    0.88 0.93
+     cancel_or_change       8            8        1.0    1.00 1.00
+        payment_issue       5            5        1.0    1.00 1.00
+     invoice_or_price       8            8        1.0    1.00 1.00
+        return_pickup       4            2        1.0    0.50 0.67
+  refund_not_received       9            9        1.0    1.00 1.00
+      warranty_status       4            4        1.0    1.00 1.00
+   pairing_connection      15           14        1.0    0.93 0.97
+    sound_or_hardware      13           11        1.0    0.85 0.92
+     battery_charging      10           10        0.9    0.90 0.90
+   app_firmware_login       8            8        1.0    1.00 1.00
+     product_question       3            3        1.0    1.00 1.00
+              unclear       0            8        0.0     NaN  NaN
+
+  tool errors: 9; by type {'abstained (Unclear)': 8, 'other: damaged_or_wrong_item -> battery_charging': 1}; costly (wrong owner) 5
+    TK-247881 [paid_but] gold=order_not_arrived tool=unclear (none 0.00) COSTLY | Product: Pulse 2 Purchased: 23 Nov Issue: the payment went through on the first try, the order has not gone th
+    TK-249565 [random] gold=damaged_or_wrong_item tool=battery_charging (tfidf 0.50) COSTLY | Product: the fit band Order: VR892857 Purchased: 22 Jan Issue: there's a dent on the case straight out of the 
+    TK-254453 [low_conf] gold=sound_or_hardware tool=unclear (none 0.00) cheap | Product: Nexa 2 Order: VR906140 Purchased: 14-06-2026 Issue: I have to tap ten times for one swipe to register
+    TK-252089 [voice] gold=pairing_connection tool=unclear (none 0.00) cheap | [IVR transcript] keeps losing my phone if i walk to the other room, vr900127, please resole asap
+    TK-246528 [hinglish] gold=return_pickup tool=unclear (none 0.00) COSTLY | hi sir the app said pickup today, that was on 03-10-2025 around Diwali se pulse2
+    TK-243095 [multi_issue] gold=order_not_arrived tool=unclear (none 0.30) COSTLY | money went out of my account 12 days ago and i have nothing in hand, vr883443, kindly look into it
+    TK-243982 [random] gold=return_pickup tool=unclear (none 0.00) COSTLY | hi packed the box a week ago & it's still here the pulse 2 earbuds urgent
+    TK-245528 [voice] gold=sound_or_hardware tool=unclear (none 0.00) cheap | [IVR transcript] hello one of them is just decoration at this poitn pulse earbuds pls reply
+    TK-254402 [voice] gold=battery_charging tool=unclear (none 0.00) cheap | hey plugging in does nothing on the case, cable works on my phone pulse 2 buds hello??
+
+  bot owner errors: 37; of which gold delivery tagged Billing: 16; tool fixes 35 of them
+tool_owner_correct  tool owner right  tool owner wrong
+bot_owner_correct                                     
+bot owner right                   80                 3
+bot owner wrong                   35                 2
