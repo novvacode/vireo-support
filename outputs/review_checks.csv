@@ -1,0 +1,15 @@
+check,key,value,note
+leakage,messages_printed_reproducibly_in_stage2,74,Billing-tagged only
+leakage,gold_tickets_among_them,3,"TK-241614, TK-241427, TK-244825"
+leakage,gold_total,310,
+leakage,tool_category_accuracy_all_gold,290/310,
+leakage,tool_category_accuracy_excluding_seen,287/307,
+leakage,not_reproducible,further ad-hoc prints in stage-1/2 exploration (count cannot be reconstructed),earlier regex versions; Billing and duplicate-search views only
+owner_definitions,bot_owner_accuracy_strict,233/310 = 75.2%,95% CI 70.1%-79.6%
+owner_definitions,bot_owner_accuracy_lenient,254/310 = 81.9%,95% CI 77.3%-85.8%
+owner_definitions,tool_owner_accuracy,298/310 = 96.1%,95% CI 93.4%-97.8%
+owner_definitions,bot_errors_that_are_arguable_definitions,21,
+owner_definitions,remaining_bot_owner_errors_by_type,"{('Billing', 'Logistics'): 33, ('Chat Frontline', 'Logistics'): 6, ('Logistics', 'Returns Desk'): 5, ('Email Frontline', 'Billing'): 4, ('Chat Frontline', 'Billing'): 3}",
+counterfactual,transfers_per_ticket_logistics_tagged_all,0.088,n=736
+counterfactual,transfers_per_ticket_logistics_tagged_payment_worded,0.105,n=86
+counterfactual,transfers_per_ticket_logistics_tagged_not_payment_worded,0.086,n=650

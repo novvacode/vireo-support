@@ -155,6 +155,15 @@ def main():
     rec("headline_target_share", base["target_share"], "share", "calculated")
     rec("saving_vs_two_hires", base["saving_y"] / TWO_HIRES_INR_YEAR, "ratio", "calculated")
 
+    # robustness: correctly tagged tickets may be easier. Use payment-worded Logistics tickets as the "routed right" rate.
+    from src.gold_sample import PAID
+    lg_pay = lg[lg["customer_message"].str.lower().str.contains(PAID)]
+    t_log_pay = rec("transfers_per_logistics_tagged_payment_worded", lg_pay["transfers"].astype(float).mean(),
+                    "transfers/ticket", "measured", f"n={len(lg_pay)}; closer counterfactual for 'paid but...' messages")
+    robust_q = (base["fixed"] * (t_mis - t_log_pay) - base["new_transfers"]) * TRANSFER_INR
+    rec("robustness_saving_per_quarter_payment_worded_baseline", robust_q, "INR/quarter", "calculated",
+        "same as base but excess transfers measured against payment-worded Logistics tickets")
+
     # alternative single method (NOT added): breach credits
     alt_breach_q = q_mis_base * recall * (b_mis - b_log) * BREACH_INR
     rec("alt_method_breach_credit_saving_per_quarter", alt_breach_q, "INR/quarter", "calculated",
@@ -349,6 +358,9 @@ These are consequences of **one event**, so only one is monetised: the transfer.
 - **Low:** the quietest month's misroute volume (x3), recall at its CI floor, excess transfers at the pessimistic CI edges, false positives at the CI ceiling.
 - **High:** the reverse.
 - **Base:** point estimates.
+- **Robustness:** tickets the bot tags right may be easier than the ones it gets wrong. Using only Logistics-tagged tickets
+  that are *worded like payment problems* as the "routed right" rate ({f3(L['t_log_pay'])} transfers per ticket,
+  n={len(L['lg_pay'])}, against {f3(L['t_log'])}) gives {inr(L['robust_q'])} a quarter instead of {inr(base['saving_q'])}.
 
 ## 4. Against two hires, and Billing vs Logistics, in agent-hours
 

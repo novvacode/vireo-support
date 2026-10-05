@@ -55,6 +55,8 @@ headline_saving_per_quarter,36586.83627844106,INR/quarter,calculated,
 headline_saving_per_year,146347.34511376423,INR/year,calculated,
 headline_target_share,0.02078579046106091,share,calculated,
 saving_vs_two_hires,0.1626081612375158,ratio,calculated,
+transfers_per_logistics_tagged_payment_worded,0.10465116279069768,transfers/ticket,measured,n=86; closer counterfactual for 'paid but...' messages
+robustness_saving_per_quarter_payment_worded_baseline,35835.1659530087,INR/quarter,calculated,same as base but excess transfers measured against payment-worded Logistics tickets
 alt_method_breach_credit_saving_per_quarter,14435.222967709953,INR/quarter,calculated,alternative single method for the same events; NOT added to the headline
 actual_weekly_mean,181.6,tickets/week,measured,25 full weeks Jan-Jun 2026
 actual_weekly_min,161.0,tickets/week,measured,

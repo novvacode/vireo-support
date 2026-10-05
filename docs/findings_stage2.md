@@ -117,6 +117,7 @@ Tier 2 (Escalations & Warranty) is reported on its own and left out of every vol
 **F10. Mis-routing costs about Rs 2.3 lakh a year, about a quarter of the Rs 9 lakh for two hires.**
 - Jan–Jun 2026: 314 delivery tickets tagged Billing (52 a month).
 - Avoidable cost in that half-year: transfers Rs 86,620 + excess breach credits Rs 30,045 = Rs 1,16,665, or about Rs 2,33,330 a year.
+- **Superseded (stage 5):** this figure adds gross transfers and breach credits from the same misrouted tickets, which double counts. Use docs/business_case.md (net excess transfers only).
 - Code: §5, the line starting "avoidable cost".
 - Caveats:
   - The estimate excludes agent re-handling time and CSAT damage, so it is a floor.

@@ -14,13 +14,13 @@ The data does not support putting the two hires into Billing: over a third of Bi
 
 ## 3. The two hires
 I know these were half-promised to Billing, so plainly:
-- **Billing vs Logistics.** Counted by the work each team actually owns, Billing's agents use 26% of their available hours and Logistics' 44%. Billing looks biggest only because it receives Logistics' work.
+- **Billing vs Logistics.** Counted by the work each team actually owns, Billing's agents use 26% of their available hours and Logistics' 44%. Billing looks like the biggest specialist queue only because it receives Logistics' work.
 - **Now:** don't commit the hires to Billing; fix the routing.
   - It costs nothing to run; building it in is not yet costed.
   - At Rs 1,46,347 a year (16.3% of the two hires), it is not a substitute for people.
   - Little work moves: only 92 of the 314 were finished by Billing. The change is about 0.39 of one agent.
-- **Before committing:** confirm volume, then run the new routing alongside the bot and compare transfers and breaches. Unclear messages (5.6%) keep today's routing.
-- **If volume is really 650 a week:** Logistics would be at 158% of capacity and Billing at 93%. The hires should go to Logistics.
+- **Before committing:** confirm volume, then run the new routing alongside the bot and compare transfers and breaches. Low-confidence messages (5.6%) keep today's routing.
+- **If volume is really 650 a week:** on policy cost standards, Logistics would need 158% of its current hours and Billing 93%. The hires should go to Logistics.
 
 ## 4. What I am not sure about, and how I checked
 - **Volume.** The export holds 181.6 tickets a week; the form assumes 650 (3.58x). All figures use the export. At 650 the saving would be about Rs 1,30,955 a quarter (estimate only).

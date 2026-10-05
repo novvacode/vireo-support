@@ -76,6 +76,9 @@ These are consequences of **one event**, so only one is monetised: the transfer.
 - **Low:** the quietest month's misroute volume (x3), recall at its CI floor, excess transfers at the pessimistic CI edges, false positives at the CI ceiling.
 - **High:** the reverse.
 - **Base:** point estimates.
+- **Robustness:** tickets the bot tags right may be easier than the ones it gets wrong. Using only Logistics-tagged tickets
+  that are *worded like payment problems* as the "routed right" rate (0.105 transfers per ticket,
+  n=86, against 0.088) gives Rs 35,835 a quarter instead of Rs 36,587.
 
 ## 4. Against two hires, and Billing vs Logistics, in agent-hours
 
