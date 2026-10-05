@@ -4,7 +4,16 @@ Categorises support tickets by **what the customer actually needs** (13 categori
 should own each one, flags where the intake bot's tag disagrees, and draws the monthly chart by new category and by
 owning team.
 
-## Run it (clean machine, Python 3.10/3.11, no API key, no network)
+## Run it (clean machine, no API key; network only for `pip install`)
+
+Tested from scratch on Python 3.10 (Windows): a fresh virtual environment, then install (about 3 minutes), then the
+command below (under a minute). Python 3.11 is expected to work but was not available to test (docs/known_issues.md #10).
+
+```bash
+python -m venv .venv
+```
+
+Activate it: `.venv\Scripts\activate` on Windows, or `source .venv/bin/activate` on macOS/Linux. Then:
 
 ```bash
 pip install -r requirements.txt
@@ -69,11 +78,23 @@ python -m src.stage2
 ```
 
 ```bash
-python -m src.validate
+python -m src.validate --tag v1
+```
+
+```bash
+python -m src.validate --tag v2
 ```
 
 ```bash
 python -m src.business_case
 ```
 
-`docs/data_audit.md`, `docs/findings_stage2.md`, `docs/validation.md`, `docs/business_case.md` (rendered by the script) and `docs/decisions.md` explain the results.
+```bash
+python -m src.compare_versions --tag v2
+```
+
+```bash
+python -m src.review_checks
+```
+
+`docs/data_audit.md`, `docs/findings_stage2.md`, `docs/validation.md`, `docs/business_case.md` (rendered by the script), `docs/decisions.md` and `docs/known_issues.md` explain the results. The client memo is `memo.md`.
