@@ -24,3 +24,8 @@
 - Asked: one headline goal with a rupee value from data and documented policy costs only, with baseline, target, arithmetic table, low/base/high, no double counting, comparisons with two hires and Billing vs Logistics in agent-hours, the 650/week discrepancy, run cost, all from a script.
 - Changed/rejected: stage 2's "avoidable cost" (gross transfers + excess breaches) rejected as double counting, replaced by net excess transfers only. The first render still contained numbers copied from earlier stages (repeat 5.2/5.3%, CSAT 2.35/3.13, 96% vs 69–79%, 60/60, "3–4x"), so all are now computed in the script and a test forbids placeholders. The "at 650/week Logistics is over capacity" sentence is now generated from the loads.
 - Discarded: a chosen target ("halve the misroutes"); adding breach credits on top of transfers; inferring hires from ticket volume; using the 650/week scaling as the headline.
+
+## Stage 6: client memo
+- Asked: a one-page plain-language memo to Priya (answer, number, the two hires, uncertainty, one next step, monthly owner chart with a one-line caption), then a review as Arjun and Neha, a revision answering their key questions, and the questions kept in docs/memo_review.md.
+- Changed/rejected: draft 1 (473 words) lacked cash vs planning cost, build cost, how little work actually moves (92 of 314 already finished by Billing), new errors (1.33%) and treatment of unclear tickets. Added those; the first revision reached 596 words and was cut back to about 490.
+- Discarded: rounded "Rs 37k" headline (memo quotes the generated Rs 36,587); presenting the routing saving as paying for hires; any claim that Billing needs no hires.

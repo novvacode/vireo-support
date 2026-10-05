@@ -147,3 +147,17 @@ Format: Decision / Why / What it changes.
 35. **docs/business_case.md is rendered by the script.**
     Why: the brief forbids hand-typed derived numbers.
     What it changes: a test checks that the doc has no unrendered placeholders, that its headline matches the CSV, and that the breach alternative is not added in.
+
+## Stage 6: client memo (2026-10-05)
+
+36. **Recommendation: do not put the two hires into Billing. Fix routing first, hold the hires until the export's completeness is confirmed, and if hires are needed send them to Logistics.**
+    Why: by owned work, Logistics carries more load per agent than Billing, and the export-volume gap is unresolved (business_case.md §4–5).
+    What it changes: the memo contradicts the client's prior expectation. It says so respectfully, with the numbers.
+
+37. **The memo quotes only numbers that already appear in script-generated documents. A test (tests/test_memo.py) fails on any other number and on technical jargon.**
+    Why: ground rule "no invented numbers"; the brief forbids manual derivation in the memo.
+    What it changes: rounded figures such as "Rs 37k" are not used; the memo quotes Rs 36,587 as generated.
+
+38. **The routing fix is presented as not a substitute for hires, and its Rs 305 value as planning cost (agent time), not cash.**
+    Why: the Finance reading (docs/memo_review.md A1, A4).
+    What it changes: no claim that the saving funds or replaces headcount.
