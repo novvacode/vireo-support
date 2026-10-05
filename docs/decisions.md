@@ -111,3 +111,39 @@ Format: Decision / Why / What it changes.
 26. **Each experiment re-runs with the rules frozen for it. v1 is archived byte-for-byte in validation_archive/rules_v1.py.**
     Why: otherwise re-running experiment 1 would silently use v2.
     What it changes: `python -m src.validate --tag v1` reproduces 179/190.
+
+## Stage 5: business case (2026-10-05)
+
+27. **Headline goal: cut delivery work landing in Billing's queue from the measured Jan–Jun 2026 share to the share the categoriser leaves behind, monetised ONLY as net excess transfers avoided at Rs 305 each.**
+    Why: a mis-tagged ticket's transfer, breach credit, repeat contact and agent time are consequences of one event. The transfer is the only one that the misroute causes mechanically, that is recorded on every helpdesk ticket, and that the policy prices.
+    What it changes: the headline is smaller than stage 2's F10 (which added gross transfers and excess breaches). That figure is superseded by this one.
+
+28. **Transfers are counted net: (transfers per mis-tagged ticket − transfers per correctly tagged Logistics ticket) × tickets the tool would fix − new transfers from the tool's false positives.**
+    Why: a correctly routed ticket still sometimes transfers, and the tool would create some new misroutes.
+    What it changes: the saving is lower than a gross transfer count (see `base_avoided`, `base_new_transfers` and `base_net` in outputs/business_case.csv).
+
+29. **The target is the categoriser's measured recall and false-positive rate against agent notes, not a chosen percentage.**
+    Why: the brief says do not invent a target. This is what routing on the customer's words already achieves on this data.
+    What it changes: the target share is `headline_target_share` in outputs/business_case.csv. The low and high cases use the Wilson CI edges.
+
+30. **Window: Jan–Jun 2026 only.**
+    Why: the most recent period, all on the helpdesk, so transfers are known and nothing is imputed.
+    What it changes: quarterly = six-month total / 2.
+
+31. **Excluded from the rupee figure:** breach credits (shown as a non-additive alternative), agent-hours (inside the Rs 305 standard), repeat contacts (no measurable excess), contact cost, CSAT, "Other"-tagged delivery work, and the cost of making the change (no figure exists).
+
+32. **Hiring comparison in policy-implied agent-hours = (contact + transfer cost) / Rs 165, against 8 h × 22 shifts per agent.**
+    Why: the brief asks for agent-hours. No handle-effort data exists, so fully loaded cost ÷ fully loaded hourly rate is the only documented conversion.
+    What it changes: these are cost-equivalent hours, labelled as such. No team's load at export volume (`hours_*_load` in the CSV) comes near capacity, so no hiring need can be inferred.
+
+33. **The 650/week scenario is shown, never used for the headline.**
+    Why: the export measures far fewer (`actual_weekly_mean`, `form_to_actual_ratio` in the CSV). Scaling assumes the same mix.
+    What it changes: at 650/week the owner-view loads put Logistics over capacity, which should be confirmed with the helpdesk admin before any hiring decision.
+
+34. **Categorisation run cost: offline Rs 0. The LLM path is estimated from characters ÷ 4 and assumed output tokens (50/300/1000), never measured.**
+    Why: no paid calls were made.
+    What it changes: the estimate is shown separately from the Rs 0 offline cost.
+
+35. **docs/business_case.md is rendered by the script.**
+    Why: the brief forbids hand-typed derived numbers.
+    What it changes: a test checks that the doc has no unrendered placeholders, that its headline matches the CSV, and that the breach alternative is not added in.

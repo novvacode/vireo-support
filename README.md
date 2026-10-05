@@ -72,4 +72,8 @@ python -m src.stage2
 python -m src.validate
 ```
 
-`docs/data_audit.md`, `docs/findings_stage2.md`, `docs/validation.md` and `docs/decisions.md` explain the results.
+```bash
+python -m src.business_case
+```
+
+`docs/data_audit.md`, `docs/findings_stage2.md`, `docs/validation.md`, `docs/business_case.md` (rendered by the script) and `docs/decisions.md` explain the results.
