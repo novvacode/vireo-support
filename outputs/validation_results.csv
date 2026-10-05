@@ -1,0 +1,64 @@
+experiment,subset,system,metric,correct,n,value,ci95_low,ci95_high,error_rate
+experiment v1,all gold,our tool,category accuracy,179,190,0.9421,0.8993,0.9674,0.0579
+experiment v1,all gold,our tool,owner-team accuracy,183,190,0.9632,0.9259,0.982,0.0368
+experiment v1,all gold,intake bot,category-compatible (lenient),119,190,0.6263,0.5557,0.692,0.3737
+experiment v1,all gold,intake bot,owner-team accuracy,150,190,0.7895,0.7261,0.8414,0.2105
+experiment v1,random (population estimate),our tool,category accuracy,77,80,0.9625,0.8955,0.9872,0.0375
+experiment v1,random (population estimate),our tool,owner-team accuracy,78,80,0.975,0.9134,0.9931,0.025
+experiment v1,random (population estimate),intake bot,category-compatible (lenient),59,80,0.7375,0.6318,0.8214,0.2625
+experiment v1,random (population estimate),intake bot,owner-team accuracy,66,80,0.825,0.7274,0.8928,0.175
+experiment v1,hard-case strata only,our tool,category accuracy,102,110,0.9273,0.863,0.9627,0.0727
+experiment v1,hard-case strata only,our tool,owner-team accuracy,105,110,0.9545,0.898,0.9804,0.0455
+experiment v1,hard-case strata only,intake bot,category-compatible (lenient),60,110,0.5455,0.4524,0.6354,0.4545
+experiment v1,hard-case strata only,intake bot,owner-team accuracy,84,110,0.7636,0.6762,0.8333,0.2364
+experiment v1,stratum: bot_disagree,our tool,category accuracy,23,25,0.92,0.7503,0.9778,0.08
+experiment v1,stratum: bot_disagree,our tool,owner-team accuracy,25,25,1.0,0.8668,1.0,0.0
+experiment v1,stratum: bot_disagree,intake bot,category-compatible (lenient),2,25,0.08,0.0222,0.2497,0.92
+experiment v1,stratum: bot_disagree,intake bot,owner-team accuracy,13,25,0.52,0.335,0.6997,0.48
+experiment v1,stratum: hinglish,our tool,category accuracy,15,15,1.0,0.7961,1.0,0.0
+experiment v1,stratum: hinglish,our tool,owner-team accuracy,15,15,1.0,0.7961,1.0,0.0
+experiment v1,stratum: hinglish,intake bot,category-compatible (lenient),10,15,0.6667,0.4171,0.8482,0.3333
+experiment v1,stratum: hinglish,intake bot,owner-team accuracy,12,15,0.8,0.5481,0.9295,0.2
+experiment v1,stratum: short,our tool,category accuracy,15,15,1.0,0.7961,1.0,0.0
+experiment v1,stratum: short,our tool,owner-team accuracy,15,15,1.0,0.7961,1.0,0.0
+experiment v1,stratum: short,intake bot,category-compatible (lenient),10,15,0.6667,0.4171,0.8482,0.3333
+experiment v1,stratum: short,intake bot,owner-team accuracy,14,15,0.9333,0.7018,0.9881,0.0667
+experiment v1,stratum: voice,our tool,category accuracy,15,15,1.0,0.7961,1.0,0.0
+experiment v1,stratum: voice,our tool,owner-team accuracy,15,15,1.0,0.7961,1.0,0.0
+experiment v1,stratum: voice,intake bot,category-compatible (lenient),12,15,0.8,0.5481,0.9295,0.2
+experiment v1,stratum: voice,intake bot,owner-team accuracy,14,15,0.9333,0.7018,0.9881,0.0667
+experiment v1,stratum: multi_issue,our tool,category accuracy,14,15,0.9333,0.7018,0.9881,0.0667
+experiment v1,stratum: multi_issue,our tool,owner-team accuracy,14,15,0.9333,0.7018,0.9881,0.0667
+experiment v1,stratum: multi_issue,intake bot,category-compatible (lenient),12,15,0.8,0.5481,0.9295,0.2
+experiment v1,stratum: multi_issue,intake bot,owner-team accuracy,15,15,1.0,0.7961,1.0,0.0
+experiment v1,stratum: low_conf,our tool,category accuracy,10,15,0.6667,0.4171,0.8482,0.3333
+experiment v1,stratum: low_conf,our tool,owner-team accuracy,11,15,0.7333,0.4805,0.891,0.2667
+experiment v1,stratum: low_conf,intake bot,category-compatible (lenient),12,15,0.8,0.5481,0.9295,0.2
+experiment v1,stratum: low_conf,intake bot,owner-team accuracy,13,15,0.8667,0.6212,0.9626,0.1333
+experiment v1,stratum: paid_but,our tool,category accuracy,10,10,1.0,0.7225,1.0,0.0
+experiment v1,stratum: paid_but,our tool,owner-team accuracy,10,10,1.0,0.7225,1.0,0.0
+experiment v1,stratum: paid_but,intake bot,category-compatible (lenient),2,10,0.2,0.0567,0.5098,0.8
+experiment v1,stratum: paid_but,intake bot,owner-team accuracy,3,10,0.3,0.1078,0.6032,0.7
+experiment v1,any ticket with hinglish,our tool,category accuracy,25,27,0.9259,0.7663,0.9794,0.0741
+experiment v1,any ticket with hinglish,our tool,owner-team accuracy,26,27,0.963,0.8172,0.9934,0.037
+experiment v1,any ticket with hinglish,intake bot,category-compatible (lenient),16,27,0.5926,0.4073,0.7549,0.4074
+experiment v1,any ticket with hinglish,intake bot,owner-team accuracy,19,27,0.7037,0.5152,0.8415,0.2963
+experiment v1,any ticket with short,our tool,category accuracy,22,22,1.0,0.8513,1.0,0.0
+experiment v1,any ticket with short,our tool,owner-team accuracy,22,22,1.0,0.8513,1.0,0.0
+experiment v1,any ticket with short,intake bot,category-compatible (lenient),14,22,0.6364,0.4295,0.8027,0.3636
+experiment v1,any ticket with short,intake bot,owner-team accuracy,20,22,0.9091,0.7218,0.9747,0.0909
+experiment v1,any ticket with voice,our tool,category accuracy,35,38,0.9211,0.792,0.9728,0.0789
+experiment v1,any ticket with voice,our tool,owner-team accuracy,36,38,0.9474,0.8271,0.9854,0.0526
+experiment v1,any ticket with voice,intake bot,category-compatible (lenient),29,38,0.7632,0.6079,0.8701,0.2368
+experiment v1,any ticket with voice,intake bot,owner-team accuracy,34,38,0.8947,0.7587,0.9583,0.1053
+experiment v1,any ticket with ambiguous,our tool,category accuracy,6,8,0.75,0.4093,0.9285,0.25
+experiment v1,any ticket with ambiguous,our tool,owner-team accuracy,7,8,0.875,0.5291,0.9776,0.125
+experiment v1,any ticket with ambiguous,intake bot,category-compatible (lenient),6,8,0.75,0.4093,0.9285,0.25
+experiment v1,any ticket with ambiguous,intake bot,owner-team accuracy,6,8,0.75,0.4093,0.9285,0.25
+experiment v1,all gold,our tool,WEAK PROXY: owner family == resolver family,144,190,0.7579,0.6923,0.8133,0.2421
+experiment v1,all gold,intake bot,WEAK PROXY: assigned family == resolver family,170,190,0.8947,0.843,0.9308,0.1053
+experiment v1,all gold,AI gold label,WEAK PROXY: gold owner family == resolver family,150,190,0.7895,0.7261,0.8414,0.2105
+experiment v1,all Billing-tagged tickets (population),our tool,WEAK PROXY: tool says delivery when notes say delivery (recall),886,921,0.962,0.9476,0.9726,0.038
+experiment v1,all Billing-tagged tickets (population),our tool,WEAK PROXY: notes say delivery when tool says delivery (precision),886,906,0.9779,0.9661,0.9857,0.0221
+experiment v1,all tickets (population),our tool,WEAK PROXY: owner family == resolver family,9254,11641,0.7949,0.7875,0.8022,0.2051
+experiment v1,all tickets (population),intake bot,WEAK PROXY: assigned family == resolver family,10292,11641,0.8841,0.8782,0.8898,0.1159

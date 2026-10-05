@@ -1,0 +1,484 @@
+ticket_id,gold_label,ambiguous,label_note,stratum,channel,customer_message,bot_category,bot_team,resolver_team,work_type,notes_confidence,source_system,tool_pred,tool_confidence,tool_method,tool_owner,tool_multi_issue,rule_reason,gold_owner,tool_correct,bot_compatible,tool_owner_correct,bot_owner_correct,error_type,costly_error,hinglish,short,voice
+TK-243610,cancel_or_change,False,,paid_but,email,"dear sir/madam,
+this is regarding the orbit smart speaker. need to change delivery address.
+i want my money back.
+thanks in advance",Other,Email Frontline,Email Frontline,delivery,medium,legacy_fd,cancel_or_change,0.95,rules,Email Frontline,False,single rule; matched: change delivery address,Email Frontline,True,False,True,True,,False,False,False,False
+TK-244990,app_firmware_login,False,,random,chat,I am losing patience. Ordered my Strata 2 headphones 10 days ago. app not opening after update. I already updated phone. Escalate this to someone senior.,App & Firmware,Chat Frontline,Chat Frontline,unclear,low,legacy_fd,app_firmware_login,0.95,rules,Chat Frontline,False,"single rule; matched: app, app not opening, update",Chat Frontline,True,True,True,True,,False,False,False,False
+TK-243858,payment_issue,False,,random,chat,"hello
+the page failed after i paid and now nothing shows in my accouunt
+the gan charger VR899421
+pls repy",Billing & Payments,Billing,Billing,billing,high,legacy_fd,payment_issue,0.95,rules,Billing,False,"single rule; matched: page failed after i paid, paid",Billing,True,True,True,True,,False,False,False,False
+TK-244412,payment_issue,False,,hinglish,voice,"sir ji
+payment was deducted but no order was created
+itna paisa diya hai
+hello??",Billing & Payments,Billing,Billing,billing,high,legacy_fd,payment_issue,0.95,rules,Billing,False,"single rule; matched: deducted, deducted but no order, payment",Billing,True,True,True,True,,False,True,False,True
+TK-241049,warranty_status,True,only an RMA claim number + complaint; read as warranty status chase,random,voice,"[IVR transcript] Hi there, This is regarding Nexa watch. Claim number RMA30627, anyone alive there?. I want my money back. Rgds,",Warranty & Repair,Escalations & Warranty,Escalations & Warranty,unclear,low,legacy_fd,warranty_status,0.95,rules,Escalations & Warranty,False,single rule; matched: claim,Escalations & Warranty,True,True,True,True,,False,False,False,True
+TK-253006,pairing_connection,False,,multi_issue,chat,"Got the Pulse 2 earbuds from Flipkart 3 weeks back. Audio keeps disconnecting every few minutes. I reset both devices. Can someone fix this? Thank you, Bhavna Rao",Connectivity,Chat Frontline,Chat Frontline,unclear,low,helpdesk,pairing_connection,0.8,rules,Chat Frontline,True,"precedence: dropout; matched: disconnect, every few minutes",Chat Frontline,True,True,True,True,,False,False,False,False
+TK-244472,sound_or_hardware,False,,bot_disagree,social,watch not responding to touch - VR888949,Warranty & Repair,Escalations & Warranty,Escalations & Warranty,unclear,low,legacy_fd,sound_or_hardware,0.95,rules,Chat Frontline,False,single rule; matched: not responding to touch,Chat Frontline,True,False,True,False,,False,False,False,False
+TK-250143,pairing_connection,False,,random,chat,i am losing patience. bought orbit mini around 27-10-2025 from amazon. bluetooth pairing fails every time. i already forgot the device and tried again. refund. now.,Connectivity,Chat Frontline,Chat Frontline,unclear,low,helpdesk,pairing_connection,0.95,rules,Chat Frontline,False,"single rule; matched: bluetooth, pairing",Chat Frontline,True,True,True,True,,False,False,False,False
+TK-247181,app_firmware_login,False,,random,email,"To the Vireo Customer Care Team,
+
+I am wriing with reference to my order of my Nexa placed on August 09.  Not receiving OTP to login. I haev tried 5 times. I request you to provide a resolution witihn 3 working days.
+
+Regards,
+Amit Rao
+Visakhapatnam",Account & Login,Email Frontline,Email Frontline,unclear,low,helpdesk,app_firmware_login,0.95,rules,Email Frontline,False,"single rule; matched: login, otp",Email Frontline,True,True,True,True,,False,False,False,False
+TK-247152,pairing_connection,False,,random,email,it goes silent for a second every few minutes and comes back,Connectivity,Email Frontline,Email Frontline,unclear,low,helpdesk,pairing_connection,0.8,rules,Email Frontline,True,precedence: dropout; matched: goes silent for a second every,Email Frontline,True,True,True,True,,False,False,False,False
+TK-243854,return_pickup,True,"'app said pickup today, that was on 27 Jul' read as a missed return pickup",low_conf,voice,"[IVR transcript] Dear Sir/Madam, I bought Pulse earbuds on 27 Jul. The app said pickup today, that was on 27 Jul. Please help. Thank you,",Returns & Refunds,Returns Desk,Returns Desk,unclear,low,legacy_fd,unclear,0.0,none,Voice Frontline,False,no decisive phrase,Returns Desk,False,True,False,True,abstained (Unclear),True,False,False,True
+TK-242740,order_not_arrived,False,,bot_disagree,chat,"paid full amount on 30/05 - order still says processing
+VR892536",Billing & Payments,Billing,Logistics,delivery,high,legacy_fd,order_not_arrived,0.95,rules,Logistics,False,single rule; matched: still says processing,Logistics,True,False,True,False,,False,False,False,False
+TK-254294,damaged_or_wrong_item,False,,random,voice,[IVR transcript] got a different colour than ordered - what do i do now?,Delivery & Shipping,Logistics,Logistics,unclear,low,helpdesk,unclear,0.0,none,Voice Frontline,False,no decisive phrase,Logistics,False,True,False,True,abstained (Unclear),True,False,False,True
+TK-248108,cancel_or_change,False,,random,social,"Product: the Pulse buds
+Order: VR888191
+Purchased: Novmber 29
+Issue: cancel order VR888191
+Tried: tried cancel button, greyed out
+Expected: refund",Other,Chat Frontline,Chat Frontline,billing,medium,helpdesk,cancel_or_change,0.95,rules,Chat Frontline,False,single rule; matched: cancel,Chat Frontline,True,False,True,True,,False,False,False,False
+TK-247508,damaged_or_wrong_item,False,,random,voice,"hi, bought my nexa around 09/11 from amazon. box was crushed & the my nexa is cracked. i refused nothing as i didn't notice till later. nothing changed. kindly look into it. regards,",Delivery & Shipping,Logistics,Logistics,unclear,low,helpdesk,damaged_or_wrong_item,0.95,rules,Logistics,False,"single rule; matched: crack, crushed",Logistics,True,True,True,True,,False,False,False,True
+TK-243135,battery_charging,False,,random,chat,"goes from full to empty during one commute, please resolve asap",Charging & Battery,Chat Frontline,Chat Frontline,unclear,low,legacy_fd,battery_charging,0.95,rules,Chat Frontline,False,single rule; matched: full to empty,Chat Frontline,True,True,True,True,,False,False,False,False
+TK-250205,app_firmware_login,False,,hinglish,chat,"bhai
+after the update propt it went dark and never came back
+anyone therre",App & Firmware,Chat Frontline,Chat Frontline,unclear,low,helpdesk,app_firmware_login,0.95,rules,Chat Frontline,False,"single rule; matched: after the update, update",Chat Frontline,True,True,True,True,,False,True,False,False
+TK-244437,cancel_or_change,False,,short,chat,"entered wrong pincode
+please resolve asap",Other,Chat Frontline,Chat Frontline,delivery,medium,legacy_fd,cancel_or_change,0.95,rules,Chat Frontline,False,single rule; matched: wrong pincode,Chat Frontline,True,False,True,True,,False,False,True,False
+TK-242839,return_pickup,False,,voice,voice,[IVR transcript] hey return pickup has not happened pulse 1,Returns & Refunds,Returns Desk,Returns Desk,unclear,low,legacy_fd,return_pickup,0.95,rules,Returns Desk,False,"single rule; matched: pickup, return pickup",Returns Desk,True,True,True,True,,False,False,False,True
+TK-242661,app_firmware_login,False,,hinglish,chat,"sir ji
+it's showing a spinning circle for hours
+please help karo
+nexa watch VR898471
+urgent",Charging & Battery,Chat Frontline,Chat Frontline,unclear,low,legacy_fd,app_firmware_login,0.95,rules,Chat Frontline,False,single rule; matched: spinning circle,Chat Frontline,True,False,True,True,,False,True,False,False
+TK-251751,order_not_arrived,False,,paid_but,social,"Dear Sir/Madam,
+
+I am writing with reference to my order of my Pulse 2 (VR882525) placed on March 20. Rs debited on 20/03, still empty handed. I have called the courier. I request you to kindly arrange a replacement.
+
+Sincerely,
+Zoya Gupta",Billing & Payments,Billing,Billing,delivery,medium,helpdesk,order_not_arrived,0.95,rules,Logistics,False,"single rule; matched: courier, empty handed",Logistics,True,False,True,False,,False,False,False,False
+TK-251676,battery_charging,False,,random,email,"Very poor quality. Ordered Pulse2 a month ago. app shows the left at 0 percent no matter how long its in the case. I already celaned the contacts with a cloth. I want a replacement or refund, nothing else.",Other,Email Frontline,Email Frontline,unclear,low,helpdesk,battery_charging,0.95,rules,Email Frontline,False,single rule; matched: 0 percent,Email Frontline,True,False,True,True,,False,False,False,False
+TK-243150,app_firmware_login,False,,voice,voice,[IVR transcript] really frustrating. this is regarding my strata 2 headphones. otp not coming on my number. i already tried 5 times. fix this or i am posting on twitter.,App & Firmware,Voice Frontline,Voice Frontline,unclear,low,legacy_fd,app_firmware_login,0.95,rules,Voice Frontline,False,single rule; matched: otp,Voice Frontline,True,True,True,True,,False,False,False,True
+TK-243340,product_question,False,,low_conf,voice,"[IVR transcript] Hey, Boughht the strata 3 around 21/06 froom vireo.in. Is the strata 3 compatbile with my TV. How do I get ths fixed? Thanks & regarsd",Product Enquiry,Voice Frontline,Voice Frontline,unclear,low,legacy_fd,product_question,0.575,tfidf,Voice Frontline,False,no decisive phrase,Voice Frontline,True,True,True,True,,False,False,False,True
+TK-248730,pairing_connection,False,,short,chat,"hey
+pairing is not working",Connectivity,Chat Frontline,Chat Frontline,unclear,low,helpdesk,pairing_connection,0.95,rules,Chat Frontline,False,single rule; matched: pairing,Chat Frontline,True,True,True,True,,False,False,True,False
+TK-247366,product_question,False,,low_conf,voice,"[IVR transcript] Hi, Got 65W charger from Amazon last month. Before I buy - will this talk to a 2019 Samsung. How do I get this fixed? Rgds Vivaan",Product Enquiry,Voice Frontline,Logistics,delivery,high,helpdesk,unclear,0.0,none,Voice Frontline,False,no decisive phrase,Voice Frontline,False,True,True,True,abstained (Unclear),False,False,False,True
+TK-253207,pairing_connection,False,,random,social,"hi sir
+it goes silent for a second every few minutes and comes back
+please jaldi
+pulse 2
+kindly do the needful",Connectivity,Chat Frontline,Chat Frontline,unclear,low,helpdesk,pairing_connection,0.8,rules,Chat Frontline,True,precedence: dropout; matched: goes silent for a second every,Chat Frontline,True,True,True,True,,False,True,False,False
+TK-253057,refund_not_received,False,,low_conf,chat,"hello, this is regarding replacement case.  the return was accepted but the amount is nowhere in my account. i checked bank. nothing changed. need this sorted tis week. thanks imran",Returns & Refunds,Returns Desk,Returns Desk,billing,medium,helpdesk,refund_not_received,0.6,rules,Returns Desk,True,"highest rule score among several; matched: amount is nowhere, return was accepted",Returns Desk,True,True,True,True,,False,False,False,False
+TK-245325,order_not_arrived,False,,random,voice,"hi vireo support,
+ordered pules 2 buds recently.  order status stuck on shipped since september 19.
+i checked the tracking page daily. nothing changed.
+honestly regretting this purchase.
+please call me on my registered number.
+regards,",Delivery & Shipping,Logistics,Logistics,delivery,high,helpdesk,order_not_arrived,0.95,rules,Logistics,False,"single rule; matched: stuck on shipped, tracking, tracking page",Logistics,True,True,True,True,,False,False,False,True
+TK-254141,payment_issue,False,,low_conf,chat,"To the Vireo Customer Care Team,
+
+I am writing with reference to my order of Nexa Fit (VR885260) placed on May 25. The page failed after I paid and now nothing shows in my account. I have waited 24 hours. I request you to process a refund to my original payment method.
+
+Sincerely,
+Arjun Patil
+Kochi",Billing & Payments,Billing,Billing,billing,high,helpdesk,payment_issue,0.6,rules,Billing,True,"highest rule score among several; matched: nothing shows in my account, page failed after i paid, paid",Billing,True,True,True,True,,False,False,False,False
+TK-248933,product_question,False,,random,email,"product: airlite earbuds
+order: vr882220
+purchased: 28 dec
+issue: can i connect two airlite earbuds together
+expected: refund",Product Enquiry,Email Frontline,Email Frontline,unclear,low,helpdesk,product_question,0.95,rules,Email Frontline,False,single rule; matched: can i connect,Email Frontline,True,True,True,True,,False,False,False,False
+TK-245533,pairing_connection,True,'keeps losing my phone if I walk to the other room' read as range/connection,random,chat,bought the pulse 2 earbuds around 01-09-2025 from amazon. keeps losing my phone if i walk to the other room. kindly look into it. thanks,Connectivity,Chat Frontline,Chat Frontline,unclear,low,helpdesk,pairing_connection,0.488,tfidf,Chat Frontline,False,no decisive phrase,Chat Frontline,True,True,True,True,,False,False,False,False
+TK-247146,app_firmware_login,False,,voice,voice,"bhai
+firmware update is stuck at 99%
+abhi tak kuch nahi hua
+anyone there",App & Firmware,Voice Frontline,Voice Frontline,unclear,low,helpdesk,app_firmware_login,0.95,rules,Voice Frontline,False,"single rule; matched: firmware, update, update is stuck",Voice Frontline,True,True,True,True,,False,True,False,True
+TK-241062,return_pickup,False,,random,email,"hey
+the app said pickup today, that was on february 13
+orbit speaker",Delivery & Shipping,Logistics,Logistics,unclear,low,legacy_fd,return_pickup,0.58,tfidf,Returns Desk,False,no decisive phrase,Returns Desk,True,False,True,False,,False,False,False,False
+TK-248079,damaged_or_wrong_item,False,,low_conf,chat,"This is regarding airlite earbuds.  Ordered black, got white, not what I asked for. I rechecked my order. Please advise. Please revert,",Delivery & Shipping,Logistics,Logistics,unclear,low,helpdesk,unclear,0.0,none,Chat Frontline,False,no decisive phrase,Logistics,False,True,False,True,abstained (Unclear),True,False,False,False
+TK-242255,pairing_connection,False,,bot_disagree,chat,"helo
+my phone just doesn't see it in the list anymore
+orbit mni
+kindly do the needful",Other,Chat Frontline,Chat Frontline,unclear,low,legacy_fd,pairing_connection,0.95,rules,Chat Frontline,False,single rule; matched: doesn't see it,Chat Frontline,True,False,True,True,,False,False,False,False
+TK-250743,pairing_connection,False,,short,email,"helo
+not pairing with my phone",App & Firmware,Email Frontline,Email Frontline,unclear,low,helpdesk,pairing_connection,0.95,rules,Email Frontline,False,single rule; matched: not pair,Email Frontline,True,False,True,True,,False,False,True,False
+TK-247809,damaged_or_wrong_item,False,,low_conf,chat,honestly regretting tis purchase. this is regarding my neexa 2 watch. wrong product delivered. i already chcked the invoice. this is the last tiem i buy frrom you.,Delivery & Shipping,Logistics,Logistics,unclear,low,helpdesk,unclear,0.3,none,Chat Frontline,True,"tie between damaged_or_wrong_item, invoice_or_price",Logistics,False,True,False,True,abstained (Unclear),True,False,False,False
+TK-251263,sound_or_hardware,False,,voice,voice,[IVR transcript] hey the strap is tearing the nexa 2,Warranty & Repair,Escalations & Warranty,Escalations & Warranty,unclear,low,helpdesk,sound_or_hardware,0.95,rules,Voice Frontline,False,single rule; matched: strap,Voice Frontline,True,False,True,False,,False,False,False,True
+TK-250302,order_not_arrived,False,,voice,voice,"hello
+i haven't received my order",Delivery & Shipping,Logistics,Logistics,delivery,high,helpdesk,order_not_arrived,0.95,rules,Logistics,False,single rule; matched: haven't received my order,Logistics,True,True,True,True,,False,False,True,True
+TK-247777,order_not_arrived,True,payment + delivery words; 'nothing at my door' read as order not arrived,hinglish,chat,"hi sir
+the amonut got deducted and since then ttal silence, no update, nothing at my door
+abhi tak kuch nahi hua
+my strata 3 headphones",Billing & Payments,Billing,Logistics,delivery,high,helpdesk,order_not_arrived,0.95,rules,Logistics,False,single rule; matched: nothing at my door,Logistics,True,False,True,False,,False,True,False,False
+TK-246257,app_firmware_login,False,,short,social,firmware update stuck for 2 hours,Charging & Battery,Chat Frontline,Chat Frontline,unclear,low,helpdesk,app_firmware_login,0.95,rules,Chat Frontline,False,"single rule; matched: firmware, update, update stuck",Chat Frontline,True,False,True,True,,False,False,True,False
+TK-244560,battery_charging,False,,random,email,honestly regretting this purchase. ordered arc neckband around diwali. dies by lunchtime with light use. i already fully charged and discharged twice. refund. now.,Charging & Battery,Email Frontline,Returns Desk,unclear,low,legacy_fd,battery_charging,0.6,rules,Email Frontline,True,"highest rule score among several; matched: charg, dies by",Email Frontline,True,True,True,True,,False,False,False,False
+TK-247310,pairing_connection,False,,multi_issue,email,audio keeps disconnecting every few minutes,Connectivity,Email Frontline,Email Frontline,unclear,low,helpdesk,pairing_connection,0.8,rules,Email Frontline,True,"precedence: dropout; matched: disconnect, every few minutes",Email Frontline,True,True,True,True,,False,False,True,False
+TK-251641,pairing_connection,False,,random,email,"Dear Sir/Madam,
+Ordered my Pulse 2 weeks ago. It connects for a second and then vanishes from the device list.
+Can someone fix this?
+Thanks Aarav Gaikwad",Connectivity,Email Frontline,Email Frontline,unclear,low,helpdesk,pairing_connection,0.95,rules,Email Frontline,False,"single rule; matched: connects for a second, device list",Email Frontline,True,True,True,True,,False,False,False,False
+TK-241973,sound_or_hardware,False,,bot_disagree,email,static noise when playing music,Other,Email Frontline,Chat Frontline,unclear,low,legacy_fd,sound_or_hardware,0.95,rules,Email Frontline,False,single rule; matched: static,Email Frontline,True,False,True,True,,False,False,True,False
+TK-243011,order_not_arrived,False,,random,chat,"HEY
+PACKAGE NOT DELIVERED EVEN AFTER 10 DAYS
+NEXA 2
+PLS REPLY",Delivery & Shipping,Logistics,Logistics,delivery,high,legacy_fd,order_not_arrived,0.95,rules,Logistics,False,"single rule; matched: package, package not delivered",Logistics,True,True,True,True,,False,False,False,False
+TK-248120,refund_not_received,False,,low_conf,email,I am losinng patience. Ordered airlite earbuds in November. where is the monye for the return. I already checked bank. Refund. Now.,Returns & Refunds,Returns Desk,Returns Desk,unclear,low,helpdesk,refund_not_received,0.619,tfidf,Returns Desk,False,no decisive phrase,Returns Desk,True,True,True,True,,False,False,False,False
+TK-241122,payment_issue,False,,multi_issue,chat,Ordered my Arc last week.  The page failed after I paid and now nothing shows in my account. I waited 24 hours. Nothing changed. Pathetic experience honestly. Pleae reesolve asap. Thanks Rohan Desai,Billing & Payments,Billing,Billing,billing,high,legacy_fd,payment_issue,0.6,rules,Billing,True,"highest rule score among several; matched: nothing shows in my account, page failed after i paid, paid",Billing,True,True,True,True,,False,False,False,False
+TK-253178,app_firmware_login,False,,random,chat,CAN'T GET PAST THE LOADING SCREEN IN THE APP - WHAT DO I DO NOW?,App & Firmware,Chat Frontline,Chat Frontline,unclear,low,helpdesk,app_firmware_login,0.95,rules,Chat Frontline,False,"single rule; matched: app, loading screen",Chat Frontline,True,True,True,True,,False,False,False,False
+TK-248092,order_not_arrived,False,,bot_disagree,email,"hey,
+i bought the charging case i ordered on 08/12. order status stuck on shipped since 08/12.
+please help.
+rgds meera",Other,Email Frontline,Chat Frontline,delivery,medium,helpdesk,order_not_arrived,0.95,rules,Logistics,False,single rule; matched: stuck on shipped,Logistics,True,False,True,False,,False,False,False,False
+TK-253538,pairing_connection,False,,short,chat,not pairing with my phone,Connectivity,Chat Frontline,Chat Frontline,unclear,low,helpdesk,pairing_connection,0.95,rules,Chat Frontline,False,single rule; matched: not pair,Chat Frontline,True,True,True,True,,False,False,True,False
+TK-242863,sound_or_hardware,False,,voice,voice,[IVR transcript] Honestly regretting this purchase. Ordered my Strata 2 headphonnes in May. crackling sound in the right side. I already tried different apps. Escalate this to someone senior,Other,Voice Frontline,Voice Frontline,unclear,low,legacy_fd,sound_or_hardware,0.6,rules,Voice Frontline,True,"highest rule score among several; matched: crackl, right side, sound",Voice Frontline,True,False,True,True,,False,False,False,True
+TK-253170,refund_not_received,False,,bot_disagree,email,"Dear Sir/Madam,
+
+I am writing with reference to my order of Nexa 2 (VR901707) placed on April 18. Refund not received yet. I have checked bank. I request you to provide a resolution within 3 working days.
+
+Yours faithfully,
+Tenzin Sandhu
+Patna",Billing & Payments,Billing,Billing,billing,high,helpdesk,refund_not_received,0.95,rules,Returns Desk,False,"single rule; matched: refund, refund not",Returns Desk,True,False,True,False,,False,False,False,False
+TK-248618,battery_charging,False,,random,chat,"helo
+left earbud shows 0% and never charges
+my pulse 2
+hello??",Charging & Battery,Chat Frontline,Chat Frontline,unclear,low,helpdesk,battery_charging,0.95,rules,Chat Frontline,False,"single rule; matched: 0%, charg",Chat Frontline,True,True,True,True,,False,False,False,False
+TK-249183,refund_not_received,False,,random,email,"product: spare case
+order: vr890029
+purchased: 28 dec
+issue: still waiting for my refund
+tried: emailed twice
+expected: resolution",Returns & Refunds,Returns Desk,Returns Desk,unclear,low,helpdesk,refund_not_received,0.95,rules,Returns Desk,False,"single rule; matched: refund, still waiting for my refund",Returns Desk,True,True,True,True,,False,False,False,False
+TK-251470,refund_not_received,False,,random,voice,[IVR transcript] Not acceptable at this price. Ordered Pulse 2 2 weeks ago. refund not received yet. I aleady checked bank. Escalate this to someone senior.,Returns & Refunds,Returns Desk,Returns Desk,billing,medium,helpdesk,refund_not_received,0.95,rules,Returns Desk,False,"single rule; matched: refund, refund not",Returns Desk,True,True,True,True,,False,False,False,True
+TK-240712,order_not_arrived,False,,hinglish,chat,"hello ji
+package not delivered even after 18 days
+airlite VR881133
+pls reply",Delivery & Shipping,Logistics,Chat Frontline,delivery,medium,legacy_fd,order_not_arrived,0.95,rules,Logistics,False,"single rule; matched: package, package not delivered",Logistics,True,True,True,True,,False,True,False,False
+TK-240774,payment_issue,False,,random,chat,"This is very disappointing. Ordered the AirLite buds around Diwali. two entries of Rs 2499 on my statement for one pair of earbuds. I already checked with bank. I want a replacement or refund, nothing else.",Billing & Payments,Billing,Billing,billing,high,legacy_fd,payment_issue,0.95,rules,Billing,False,"single rule; matched: bank, two entries",Billing,True,True,True,True,,False,False,False,False
+TK-247784,invoice_or_price,False,,random,email,"sir ji
+discount was not applied at checkout
+abhi tak kuch nahi hua
+kindly do the needful",Other,Email Frontline,Email Frontline,billing,medium,helpdesk,invoice_or_price,0.95,rules,Billing,False,single rule; matched: discount,Billing,True,False,True,False,,False,True,False,False
+TK-253630,damaged_or_wrong_item,False,,short,voice,[IVR transcript] wrong product delivered,Delivery & Shipping,Logistics,Logistics,unclear,low,helpdesk,damaged_or_wrong_item,0.95,rules,Logistics,False,single rule; matched: wrong product,Logistics,True,True,True,True,,False,False,True,True
+TK-241293,sound_or_hardware,False,,short,chat,strap pin came off,Warranty & Repair,Escalations & Warranty,Escalations & Warranty,unclear,low,legacy_fd,sound_or_hardware,0.95,rules,Chat Frontline,False,single rule; matched: strap,Chat Frontline,True,False,True,False,,False,False,True,False
+TK-241031,order_not_arrived,False,,random,chat,"package not delivered even after 14 days, VR891535",Delivery & Shipping,Logistics,Logistics,delivery,high,legacy_fd,order_not_arrived,0.95,rules,Logistics,False,"single rule; matched: package, package not delivered",Logistics,True,True,True,True,,False,False,False,False
+TK-254210,order_not_arrived,False,,random,chat,"16 days since payment, you have no idea where it is and neither do I - i want my money back",Billing & Payments,Billing,Logistics,delivery,high,helpdesk,order_not_arrived,0.95,rules,Logistics,False,single rule; matched: no idea where it is,Logistics,True,False,True,False,,False,False,False,False
+TK-252434,pairing_connection,True,sound vs pairing: 'sound stutters when phone in pocket' read as a connection/range problem,bot_disagree,chat,"Honestly regretting this purchase. I boguht Strata 2 on 24/03. teh sound stutters whenever my phoen is in my pocket. I already kept phone in hand. I want a replacement or refund, nothing else.",Connectivity,Chat Frontline,Chat Frontline,unclear,low,helpdesk,sound_or_hardware,0.95,rules,Chat Frontline,False,single rule; matched: sound,Chat Frontline,False,True,True,True,device-fault confusion (same Frontline owner),False,False,False,False
+TK-245128,sound_or_hardware,False,,random,chat,"Hi team, Got pulse 2 buds from vireo.in in August. Left side has no audio at all. I tried different phone. Nothing changed. Need this sorted this week. Thanks & regards, Dev Bhatia",Audio Quality,Chat Frontline,Chat Frontline,unclear,low,helpdesk,sound_or_hardware,0.95,rules,Chat Frontline,False,"single rule; matched: left side, no audio",Chat Frontline,True,True,True,True,,False,False,False,False
+TK-250977,sound_or_hardware,False,,bot_disagree,email,HONESTLY REGRETTING THIS PURCHASE. This is regarding Strata 2. people cannot haer me on calls. I already checked mic permissions. This is the last time I buy from u,Connectivity,Email Frontline,Chat Frontline,unclear,low,helpdesk,sound_or_hardware,0.95,rules,Email Frontline,False,single rule; matched: mic,Email Frontline,True,False,True,True,,False,False,False,False
+TK-241073,sound_or_hardware,False,,random,chat,"product: strata 3
+order: vr894519
+purchased: 12-01-2025
+issue: satic noise when playing music
+tried: tried different apps
+expected: refund",Audio Quality,Chat Frontline,Chat Frontline,unclear,low,legacy_fd,sound_or_hardware,0.842,tfidf,Chat Frontline,False,no decisive phrase,Chat Frontline,True,True,True,True,,False,False,False,False
+TK-248624,pairing_connection,False,,multi_issue,email,"dear sir/madam, my strata 3 headphones purchased recently, order vr905612. audio keeps disconnecting every few minutes. i turned off wifi. nothing changed. i want my money back. thanks & regards, isha",Connectivity,Email Frontline,Escalations & Warranty,unclear,low,helpdesk,pairing_connection,0.8,rules,Email Frontline,True,"precedence: dropout; matched: disconnect, every few minutes, wifi",Email Frontline,True,True,True,True,,False,False,False,False
+TK-247802,refund_not_received,False,,hinglish,email,"team,
+refund was promised 14 days ago and nothing
+bahut pareshan hu
+pls reply",Returns & Refunds,Returns Desk,Returns Desk,unclear,low,helpdesk,refund_not_received,0.95,rules,Returns Desk,False,"single rule; matched: refund, refund was promised",Returns Desk,True,True,True,True,,False,True,False,False
+TK-252442,refund_not_received,False,,low_conf,social,"hello ji
+the reutrn was accepted but the amount is nowhere in my account
+anyone there",Billing & Payments,Billing,Billing,billing,high,helpdesk,unclear,0.3,none,Chat Frontline,True,"tie between app_firmware_login, refund_not_received",Returns Desk,False,False,False,False,abstained (Unclear),True,True,False,False
+TK-253340,battery_charging,False,,bot_disagree,email,"hello ji
+battery life has dropped to almost nothing
+kuch karo
+strata 2 VR893076
+anyone there",Other,Email Frontline,Chat Frontline,unclear,low,helpdesk,battery_charging,0.95,rules,Email Frontline,False,single rule; matched: battery,Email Frontline,True,False,True,True,,False,True,False,False
+TK-243384,product_question,False,,hinglish,chat,"bhai
+does nexa fit work with iphone
+nexa fit
+pls reply",Product Enquiry,Chat Frontline,Chat Frontline,unclear,low,legacy_fd,product_question,0.95,rules,Chat Frontline,False,single rule; matched: does nexa fit work,Chat Frontline,True,True,True,True,,False,True,False,False
+TK-246945,order_not_arrived,False,,random,chat,"my order has not been delivered yet
+whta do i do now?",Billing & Payments,Billing,Logistics,delivery,high,helpdesk,order_not_arrived,0.95,rules,Logistics,False,single rule; matched: not been delivered,Logistics,True,False,True,False,,False,False,False,False
+TK-251380,sound_or_hardware,False,,short,email,"HII
+DISTORTED AUDIO AT HIGH VOLUME",Audio Quality,Email Frontline,Chat Frontline,unclear,low,helpdesk,sound_or_hardware,0.95,rules,Email Frontline,False,"single rule; matched: audio, distort, volume",Email Frontline,True,True,True,True,,False,False,True,False
+TK-248549,order_not_arrived,False,,random,chat,"to the vireo customer care team,
+
+i am writing with reference to my order of nexa watch (vr899996) placed on 21/12. package not delivered even after 9 days. i have called the courier. i request you to provide a resolution witthin 3 working days.
+
+sincerely,
+daniel das
+nagpur",Other,Chat Frontline,Chat Frontline,delivery,medium,helpdesk,order_not_arrived,0.95,rules,Logistics,False,"single rule; matched: courier, package, package not delivered",Logistics,True,False,True,False,,False,False,False,False
+TK-241103,pairing_connection,False,,multi_issue,email,"Hi, This is regarding the neckband.  It goes silent for a second every few minutes and comes back. I reset both devices. Nothing changed. Please call me on my registered number.",Connectivity,Email Frontline,Email Frontline,unclear,low,legacy_fd,pairing_connection,0.8,rules,Email Frontline,True,precedence: dropout; matched: goes silent for a second every,Email Frontline,True,True,True,True,,False,False,False,False
+TK-244143,app_firmware_login,False,,hinglish,chat,"sir ji
+the login code never arrives, tried 6 times
+abih tak kuch nahi hua",Account & Login,Chat Frontline,Chat Frontline,unclear,low,legacy_fd,app_firmware_login,0.95,rules,Chat Frontline,False,"single rule; matched: code never arrives, login",Chat Frontline,True,True,True,True,,False,True,False,False
+TK-243800,order_not_arrived,False,,paid_but,chat,"namaste, this is regarding my pulse. payment successful but order not delivered. i checked with neighbours. i have been a loyal customer and this is how you treat me. kindly look into it.",Billing & Payments,Billing,Billing,delivery,medium,legacy_fd,order_not_arrived,0.95,rules,Logistics,False,single rule; matched: not delivered,Logistics,True,False,True,False,,False,False,False,False
+TK-246072,order_not_arrived,False,,hinglish,voice,"[IVR transcript] team, order status stuck on shipped since 09/10 please jaldi the pulse buds ??",Delivery & Shipping,Logistics,Logistics,delivery,high,helpdesk,order_not_arrived,0.95,rules,Logistics,False,single rule; matched: stuck on shipped,Logistics,True,True,True,True,,False,True,False,True
+TK-248967,app_firmware_login,False,,random,voice,[IVR transcript] Very poor quality. Got Pulse 2 from Amazno recently. your site keeps saying it sent me a code and my phone disagrees. I already tried on another browser. This is the last tiem I buy from you.,Account & Login,Voice Frontline,Voice Frontline,unclear,low,helpdesk,app_firmware_login,0.95,rules,Voice Frontline,False,single rule; matched: sent me a code,Voice Frontline,True,True,True,True,,False,False,False,True
+TK-247600,order_not_arrived,False,,random,voice,I haven't received my order,Delivery & Shipping,Logistics,Logistics,delivery,high,helpdesk,order_not_arrived,0.95,rules,Logistics,False,single rule; matched: haven't received my order,Logistics,True,True,True,True,,False,False,True,True
+TK-249802,order_not_arrived,False,,short,chat,"order not delivered, tracking not updating",Delivery & Shipping,Logistics,Logistics,delivery,high,helpdesk,order_not_arrived,0.95,rules,Logistics,False,"single rule; matched: not delivered, tracking, tracking not updating",Logistics,True,True,True,True,,False,False,True,False
+TK-242523,battery_charging,False,,multi_issue,social,"Hi there,
+Bougght the strata 3 around 19/04 frmo vireo.in.  Battery bcakup is terrible now.
+I fully charged and discharged twice.
+Please help.
+Plaese revert, Zaid",Other,Chat Frontline,Chat Frontline,unclear,low,legacy_fd,battery_charging,0.6,rules,Chat Frontline,True,"highest rule score among several; matched: battery, charg",Chat Frontline,True,False,True,True,,False,False,False,False
+TK-243728,damaged_or_wrong_item,False,,hinglish,chat,"hi sir
+the parcel looked like it was kicked here from the warehouse, & the unit has a crack
+itna paisa diya hai
+pls reply",Delivery & Shipping,Logistics,Logistics,unclear,low,legacy_fd,damaged_or_wrong_item,0.95,rules,Logistics,False,"single rule; matched: crack, kicked",Logistics,True,True,True,True,,False,True,False,False
+TK-240896,order_not_arrived,True,"'money went out ... nothing in hand' read as order not arrived, not payment",paid_but,email,"Not what I expected from Vireo.  Strata 3 purchased around Diwali, order VR906042. money went out of my account 8 days ago and I have nothing in hand. I already checked the tracking page daily. Refund. Now",Billing & Payments,Billing,Logistics,delivery,high,legacy_fd,order_not_arrived,0.6,rules,Logistics,True,"highest rule score among several; matched: nothing in hand, tracking, tracking page",Logistics,True,False,True,False,,False,False,False,False
+TK-245800,return_pickup,False,,voice,voice,[IVR transcript] I am losing patience. I BOUGHT THE STRATA 3 ON 02 OCT. retrun pickup has not happened. I already called courier. Fix this or I am posting on twitter,Returns & Refunds,Returns Desk,Returns Desk,unclear,low,helpdesk,return_pickup,0.95,rules,Returns Desk,False,"single rule; matched: pickup, pickup has not",Returns Desk,True,True,True,True,,False,False,False,True
+TK-254131,pairing_connection,False,,bot_disagree,email,"product: orbit mini
+order: vr886163
+purchased: 05 jul
+issue: audio keeps disconnecting every few minutes
+tried: reset both devices
+expected: callback",Other,Email Frontline,Chat Frontline,unclear,low,helpdesk,pairing_connection,0.8,rules,Email Frontline,True,"precedence: dropout; matched: disconnect, every few minutes",Email Frontline,True,False,True,True,,False,False,False,False
+TK-251126,battery_charging,False,,random,email,"Hi team, This is regarding the nexa smartwatch. Battery life has dropped to almost nothing. Please resolve asap. Thank you,",Charging & Battery,Email Frontline,Returns Desk,unclear,low,helpdesk,battery_charging,0.95,rules,Email Frontline,False,single rule; matched: battery,Email Frontline,True,True,True,True,,False,False,False,False
+TK-244359,app_firmware_login,False,,low_conf,voice,[IVR transcript] Pathetic experience honestly.  I bought the mini speaker on 01 Jun. it's showing a spining circle for hours. I already restarted the app. This is the lasst time I buy from you.,App & Firmware,Voice Frontline,Voice Frontline,unclear,low,legacy_fd,app_firmware_login,0.739,tfidf,Voice Frontline,False,no decisive phrase,Voice Frontline,True,True,True,True,,False,False,False,True
+TK-241865,cancel_or_change,False,,random,email,"hi
+entered wrong pincode
+nxa 2 VR896716
+anyone there",Other,Email Frontline,Email Frontline,delivery,medium,legacy_fd,cancel_or_change,0.95,rules,Email Frontline,False,single rule; matched: wrong pincode,Email Frontline,True,False,True,True,,False,False,False,False
+TK-244973,invoice_or_price,False,,random,chat,"Dar Sir/Madam,
+
+I am writing with refernce to my order of my Pulse 2 (VR886601) placed on 29-07-2025.  Ned the bill with my firm's GSTIN on it. I have tried different browser. I request you to provide a resolution within 3 working days.
+
+Yours faithfully,
+Om Desai
+Jaipur",Other,Chat Frontline,Email Frontline,billing,medium,legacy_fd,invoice_or_price,0.95,rules,Billing,False,"single rule; matched: gst, the bill",Billing,True,False,True,False,,False,False,False,False
+TK-247868,payment_issue,False,,multi_issue,email,"the page failed after i paid & now nothing shows in my account, vr909296, i want my money back",Billing & Payments,Billing,Billing,billing,high,helpdesk,payment_issue,0.6,rules,Billing,True,"highest rule score among several; matched: nothing shows in my account, page failed after i paid, paid",Billing,True,True,True,True,,False,False,False,False
+TK-253877,battery_charging,False,,bot_disagree,social,"honestly regretting this purchase.  got my pulse 2 from vireo.in 2 weeks ago. the promiseed 40 hours is nowhere close, i get maybe 2. i already updated the app. escalate this to someone senior",Charging & Battery,Chat Frontline,Email Frontline,unclear,low,helpdesk,app_firmware_login,0.559,tfidf,Chat Frontline,False,no decisive phrase,Chat Frontline,False,True,True,True,device-fault confusion (same Frontline owner),False,False,False,False
+TK-246254,app_firmware_login,False,,short,social,otp not coming on my nmuber,Account & Login,Chat Frontline,Email Frontline,unclear,low,helpdesk,app_firmware_login,0.95,rules,Chat Frontline,False,single rule; matched: otp,Chat Frontline,True,True,True,True,,False,False,True,False
+TK-246115,return_pickup,False,,random,social,"Product: my Pulse 2
+Order: VR881739
+Purchased: 26 Sep
+Issue: nobody came for the pickup
+Tried: called courier
+Expected: replacement",Returns & Refunds,Returns Desk,Returns Desk,unclear,low,helpdesk,return_pickup,0.95,rules,Returns Desk,False,"single rule; matched: nobody came for the pickup, pickup",Returns Desk,True,True,True,True,,False,False,False,False
+TK-244731,cancel_or_change,False,,hinglish,email,"team,
+cancel order vr895987
+last month se
+pls reply",Delivery & Shipping,Logistics,Logistics,billing,medium,legacy_fd,cancel_or_change,0.95,rules,Email Frontline,False,single rule; matched: cancel,Email Frontline,True,False,True,False,,False,True,False,False
+TK-254046,invoice_or_price,False,,random,email,"hey
+need teh bill with my firm's gstin on it
+pulse 2
+urgennt",Billing & Payments,Billing,Billing,billing,high,helpdesk,invoice_or_price,0.95,rules,Billing,False,"single rule; matched: bill with, gst",Billing,True,True,True,True,,False,False,False,False
+TK-248626,order_not_arrived,False,,paid_but,chat,"team,
+paid on 15-12-2025, still waiting for something to show up
+kuch karo
+kindly do the needflu",Delivery & Shipping,Logistics,Logistics,delivery,high,helpdesk,order_not_arrived,0.95,rules,Logistics,False,single rule; matched: still waiting for something to show,Logistics,True,True,True,True,,False,True,False,False
+TK-250688,app_firmware_login,False,,random,email,"Product: Pulse 2
+Order: VR886706
+Purchased: December 24
+Issue: firmware update stuck for 2 hours
+Tried: restarted the app
+Expected: refund",App & Firmware,Email Frontline,Email Frontline,unclear,low,helpdesk,app_firmware_login,0.95,rules,Email Frontline,False,"single rule; matched: firmware, update, update stuck",Email Frontline,True,True,True,True,,False,False,False,False
+TK-251755,pairing_connection,False,,hinglish,chat,"sir ji
+pairing is not working",Connectivity,Chat Frontline,Chat Frontline,unclear,low,helpdesk,pairing_connection,0.95,rules,Chat Frontline,False,single rule; matched: pairing,Chat Frontline,True,True,True,True,,False,True,True,False
+TK-250250,invoice_or_price,False,,hinglish,chat,"team,
+discount was not applied at checkout
+kal se
+anyone there",Product Enquiry,Chat Frontline,Chat Frontline,billing,medium,helpdesk,invoice_or_price,0.95,rules,Billing,False,single rule; matched: discount,Billing,True,False,True,False,,False,True,False,False
+TK-244858,order_not_arrived,False,,random,social,"sir ji
+paid but package not deliveerd eevn after 13 days",Billing & Payments,Billing,Billing,delivery,medium,legacy_fd,order_not_arrived,0.817,tfidf,Logistics,False,no decisive phrase,Logistics,True,False,True,False,,False,True,False,False
+TK-240390,pairing_connection,False,,random,chat,"Product: Nexa watch
+Order: VR896934
+Purchased: 02/10
+Issue: cannot pair Nexa wtach with my laptop
+Tried: restarted teh phone
+Expected: replacement",Other,Chat Frontline,Chat Frontline,unclear,low,legacy_fd,pairing_connection,0.95,rules,Chat Frontline,False,single rule; matched: cannot pair,Chat Frontline,True,False,True,True,,False,False,False,False
+TK-248474,pairing_connection,False,,multi_issue,chat,"product: my strata 3 headphones
+purchased: 11-12-2025
+issue: it goes silent for a second every few minutes and comes back
+tried: reset both devices
+expected: resolution",Audio Quality,Chat Frontline,Chat Frontline,unclear,low,helpdesk,pairing_connection,0.8,rules,Chat Frontline,True,precedence: dropout; matched: goes silent for a second every,Chat Frontline,True,False,True,True,,False,False,False,False
+TK-247895,order_not_arrived,False,,bot_disagree,chat,"sir ji
+transaction done, where is my stuff
+urgent",Billing & Payments,Billing,Billing,delivery,medium,helpdesk,order_not_arrived,0.95,rules,Logistics,False,single rule; matched: where is my stuff,Logistics,True,False,True,False,,False,True,False,False
+TK-241079,battery_charging,False,,multi_issue,chat,"Deaar Sir/Madam, I bought my Strata 3 headphonnes on 16 Dec. Battery draining even whhen not in use. I fully charged and discharged twice. Nothing changed. Pathetic experience honestly. I want a replacement. Plesae revert, Steven",Charging & Battery,Chat Frontline,Chat Frontline,unclear,low,legacy_fd,battery_charging,0.6,rules,Chat Frontline,True,"highest rule score among several; matched: battery, charg, drain",Chat Frontline,True,True,True,True,,False,False,False,False
+TK-251168,return_pickup,False,,random,voice,[IVR transcript] hii pickup scheduled but no one showed up teh nexa 2 VR900034 urgetn,Delivery & Shipping,Logistics,Logistics,unclear,low,helpdesk,return_pickup,0.95,rules,Returns Desk,False,"single rule; matched: no one showed up, pickup, pickup scheduled",Returns Desk,True,False,True,False,,False,False,False,True
+TK-252971,refund_not_received,False,,random,chat,"Hello Vireo, I bought Orbit Mini on 27/04. The return was accepted but the amount is nowhere in my account. I emailed twice. Can someeone fix this? Thank you,",Returns & Refunds,Returns Desk,Returns Desk,billing,medium,helpdesk,refund_not_received,0.6,rules,Returns Desk,True,"highest rule score among several; matched: amount is nowhere, return was accepted",Returns Desk,True,True,True,True,,False,False,False,False
+TK-241614,payment_issue,False,,random,social,"Hi team,
+This is regarding the Nexa 2.  Paid via UPI, amount deducted, no order confirmation.
+I waited 24 hours. Nothing changed.
+Need this sorted this week.",Billing & Payments,Billing,Billing,billing,high,legacy_fd,payment_issue,0.95,rules,Billing,False,"single rule; matched: deducted, no order confirmation, paid, upi",Billing,True,True,True,True,,False,False,False,False
+TK-244702,app_firmware_login,False,,low_conf,email,"Product: Pulse 2
+Order: VR903831
+Purchased: 01-08-2025
+Issue: your site kees saying it setn me a cde and my phone disageres
+Tried: tried 5 times
+Expected: resolution",Account & Login,Email Frontline,Chat Frontline,unclear,low,legacy_fd,app_firmware_login,0.579,tfidf,Email Frontline,False,no decisive phrase,Email Frontline,True,True,True,True,,False,False,False,False
+TK-249350,invoice_or_price,False,,random,chat,"Hi team,
+I bought Orbit Mini on 08 Jan. The invoice PDF link gives a 404.
+I tried different browser. Nothing changed.
+How do I get this fixed?
+Thanks in advance",Billing & Payments,Billing,Billing,unclear,low,helpdesk,invoice_or_price,0.95,rules,Billing,False,single rule; matched: invoice,Billing,True,True,True,True,,False,False,False,False
+TK-244694,return_pickup,False,,random,chat,"Hi there, Got my Nexa 2 watch from vireo.in around Diwali. Nobody came for the pickup. I rescheduled pickup twice. Nothing changed. Waiitng for your reply.",Delivery & Shipping,Logistics,Logistics,unclear,low,legacy_fd,return_pickup,0.95,rules,Returns Desk,False,"single rule; matched: nobody came for the pickup, pickup, rescheduled pickup",Returns Desk,True,False,True,False,,False,False,False,False
+TK-251601,pairing_connection,False,,multi_issue,email,audio keeps disconnecting every few minutes - VR905701 - pls resolve asap,Connectivity,Email Frontline,Email Frontline,unclear,low,helpdesk,pairing_connection,0.8,rules,Email Frontline,True,"precedence: dropout; matched: disconnect, every few minutes",Email Frontline,True,True,True,True,,False,False,False,False
+TK-245867,app_firmware_login,False,,short,chat,"hey
+app not opening after update",App & Firmware,Chat Frontline,Chat Frontline,unclear,low,helpdesk,app_firmware_login,0.95,rules,Chat Frontline,False,"single rule; matched: app, app not opening, update",Chat Frontline,True,True,True,True,,False,False,True,False
+TK-243934,invoice_or_price,False,,random,chat,"hello vireo, i bought the pulse 2 earbuds on july 30.  the festive offer vanished when i clicked pay. i tried on app and website. please help. awaiting response,",Billing & Payments,Billing,Billing,billing,high,legacy_fd,invoice_or_price,0.95,rules,Billing,False,single rule; matched: offer vanished,Billing,True,True,True,True,,False,False,False,False
+TK-253744,return_pickup,False,,random,email,"hi
+i have been sitting at home for 3 days waiting for your courier",Returns & Refunds,Returns Desk,Returns Desk,unclear,low,helpdesk,return_pickup,0.95,rules,Returns Desk,False,single rule; matched: waiting for your courier,Returns Desk,True,True,True,True,,False,False,False,False
+TK-245201,damaged_or_wrong_item,False,,low_conf,email,I have been a loyal customer and this is how you treat me. Ordered pulse 2 buds 10 days ago. the box says pulse 2 buds but what's inside is not what I paiid for. I already checked the invoice. This is the last time I buy from you,Delivery & Shipping,Logistics,Logistics,unclear,low,helpdesk,damaged_or_wrong_item,0.567,tfidf,Logistics,True,"tie between damaged_or_wrong_item, invoice_or_price",Logistics,True,True,True,True,,False,False,False,False
+TK-245781,cancel_or_change,False,,random,social,"ordered the wrong colour, don't ship it",Other,Chat Frontline,Billing,billing,high,helpdesk,cancel_or_change,0.95,rules,Chat Frontline,False,"single rule; matched: don't ship, wrong colour",Chat Frontline,True,False,True,True,,False,False,False,False
+TK-250466,sound_or_hardware,True,'useless for meetings' read as a mic fault (sound_or_hardware); could be connection,random,email,"Hi there, Ordered my Arc a month ago.  Works for music but uesless for meetings. Can someone fix this? Thanks in advance, Amit Sheikh",Audio Quality,Email Frontline,Email Frontline,unclear,low,helpdesk,sound_or_hardware,0.513,tfidf,Email Frontline,False,no decisive phrase,Email Frontline,True,True,True,True,,False,False,False,False
+TK-245511,order_not_arrived,False,,random,chat,"To the Vireo Custmer Cae Team,
+
+I am writing with reference to my order of Pulse 2 (VR898067) palced on 22 Sep. Package not delivered even after 9 days. I have called the courier. I request you to process a refund to my original payment method.
+
+Regards,
+Rahul Saxena
+Raipur",Delivery & Shipping,Logistics,Logistics,delivery,high,helpdesk,order_not_arrived,0.95,rules,Logistics,False,"single rule; matched: courier, package, package not delivered",Logistics,True,True,True,True,,False,False,False,False
+TK-248136,pairing_connection,False,,bot_disagree,chat,"pathetic exerience honestly. ordered my nexa 2 watch a month ago. cannot pair my nexa 2 watch with my laptop. i already restarted the phone. i want a replacement or refund, nothing else",App & Firmware,Chat Frontline,Escalations & Warranty,unclear,low,helpdesk,pairing_connection,0.95,rules,Chat Frontline,False,single rule; matched: cannot pair,Chat Frontline,True,False,True,True,,False,False,False,False
+TK-243926,damaged_or_wrong_item,False,,random,chat,"dear team, got pulse earbuds from vireo.in in july. wrong product delivered. i checked the invoice. what do i do now? regards nisha",Delivery & Shipping,Logistics,Logistics,unclear,low,legacy_fd,invoice_or_price,0.516,tfidf,Billing,True,"tie between damaged_or_wrong_item, invoice_or_price",Logistics,False,True,False,True,delivery labelled as Billing,True,False,False,False
+TK-251640,battery_charging,False,,low_conf,chat,"Not acceptable at this price. Bought my Pulse around 01-01-2026 from Amazon. plugging in does nothing on the case, cable works on my phone. I already tried 3 different cables. Escalate this to someone senior.",Warranty & Repair,Escalations & Warranty,Escalations & Warranty,unclear,low,helpdesk,battery_charging,0.584,tfidf,Chat Frontline,False,no decisive phrase,Chat Frontline,True,False,True,False,,False,False,False,False
+TK-253735,warranty_status,False,,random,chat,"Really frustrating. I bought Pulse2 on 13/10. service centre took it, now silence. I already emailed twice. I want a replacement or refund, nothing else.",Warranty & Repair,Escalations & Warranty,Escalations & Warranty,unclear,low,helpdesk,warranty_status,0.8,rules,Escalations & Warranty,False,precedence: repair/claim status; matched: service centre,Escalations & Warranty,True,True,True,True,,False,False,False,False
+TK-244765,payment_issue,False,,multi_issue,chat,"hii
+the page failed after i paid and now nothing shows in my account
+anyone there",Billing & Payments,Billing,Billing,billing,high,legacy_fd,payment_issue,0.6,rules,Billing,True,"highest rule score among several; matched: nothing shows in my account, page failed after i paid, paid",Billing,True,True,True,True,,False,False,False,False
+TK-241427,order_not_arrived,False,,random,chat,paid but package not delivered even after 12 days - can someone fix this?,Billing & Payments,Billing,Logistics,delivery,high,legacy_fd,order_not_arrived,0.95,rules,Logistics,False,"single rule; matched: package, package not delivered",Logistics,True,False,True,False,,False,False,False,False
+TK-244582,order_not_arrived,False,,paid_but,chat,"Hi there, Order VR890851 (AirLite).  6 days since payment, you have no idea where it is and neither do I. I called the courier. Need this sorted this week. Thank you",Billing & Payments,Billing,Logistics,delivery,high,legacy_fd,order_not_arrived,0.95,rules,Logistics,False,"single rule; matched: courier, no idea where it is",Logistics,True,False,True,False,,False,False,False,False
+TK-247513,order_not_arrived,False,,random,chat,"hi virreo support, order vr910130 (the nexa 2). my order has not been delivered yet. i checked the tracking page daily. nothing changed. i want a replacement. thanks & rgards",Billing & Payments,Billing,Billing,delivery,medium,helpdesk,order_not_arrived,0.95,rules,Logistics,False,"single rule; matched: not been delivered, tracking, tracking page",Logistics,True,False,True,False,,False,False,False,False
+TK-250657,return_pickup,False,,random,chat,Really frustrating.  This is regarding my Pules 2. I have been sitting at home for 3 days waiting for ur courier. I already reschduled pickup twice. This is the last time I buy from u.,Returns & Refunds,Returns Desk,Returns Desk,unclear,low,helpdesk,return_pickup,0.849,tfidf,Returns Desk,False,no decisive phrase,Returns Desk,True,True,True,True,,False,False,False,False
+TK-247942,return_pickup,False,,random,chat,return pickup has not happened. kindly look intto it,Returns & Refunds,Returns Desk,Returns Desk,unclear,low,helpdesk,return_pickup,0.95,rules,Returns Desk,False,"single rule; matched: pickup, return pickup",Returns Desk,True,True,True,True,,False,False,False,False
+TK-245062,product_question,False,,random,chat,"hello, got pulse 2 from vireo.in a month ago. does pulse 2 work wtih iphone. please help.",Other,Chat Frontline,Chat Frontline,unclear,low,legacy_fd,product_question,0.95,rules,Chat Frontline,False,single rule; matched: does pulse 2 work,Chat Frontline,True,False,True,True,,False,False,False,False
+TK-245518,invoice_or_price,False,,bot_disagree,email,"namaste,
+ordered pulse 2 recently. your ad said 20% off and the cart says full price.
+i tried on app and website. nothing changed.
+please call me on my registered number.
+thanks & regards",Product Enquiry,Email Frontline,Email Frontline,billing,medium,helpdesk,invoice_or_price,0.95,rules,Billing,False,"single rule; matched: % off, full price",Billing,True,False,True,False,,False,False,False,False
+TK-242224,order_not_arrived,False,,bot_disagree,voice,Really frustrating. Ordered teh mini speaker 3 weeks back. I haven't received my order. I already checked the tracking page daily. Fix this or I am posting on twitter.,Other,Voice Frontline,Voice Frontline,delivery,medium,legacy_fd,order_not_arrived,0.95,rules,Logistics,False,"single rule; matched: haven't received my order, tracking, tracking page",Logistics,True,False,True,False,,False,False,False,True
+TK-248679,refund_not_received,False,,hinglish,email,"sir ji
+u picked up teh ietm 11 days ago and my money hasn't come bakc
+pls reply",Returns & Refunds,Returns Desk,Returns Desk,billing,medium,helpdesk,refund_not_received,0.794,tfidf,Returns Desk,False,no decisive phrase,Returns Desk,True,True,True,True,,False,True,False,False
+TK-253475,app_firmware_login,False,,random,voice,"Dear Sir/Madam, I bought Pulse 2 on 21/04. OTP not coming on my number. I tried on another browser. Nothing changed. Need this sorted this week. Please revert, Harsh Das",Account & Login,Voice Frontline,Voice Frontline,unclear,low,helpdesk,app_firmware_login,0.95,rules,Voice Frontline,False,single rule; matched: otp,Voice Frontline,True,True,True,True,,False,False,False,True
+TK-243544,cancel_or_change,False,,voice,voice,"hi
+i moved houses yesterday and the order is going to the old flat",Other,Voice Frontline,Voice Frontline,delivery,medium,legacy_fd,cancel_or_change,0.95,rules,Voice Frontline,False,"single rule; matched: moved houses, old flat",Voice Frontline,True,False,True,True,,False,False,False,True
+TK-240555,order_not_arrived,False,,bot_disagree,chat,"product: the neckband
+order: vr898881
+purchased: 25 jan
+issue: i haven't received my order
+tried: checked the tracking page daily
+expected: refund",Other,Chat Frontline,Chat Frontline,delivery,medium,legacy_fd,order_not_arrived,0.95,rules,Logistics,False,single rule; matched: haven't received my order,Logistics,True,False,True,False,,False,False,False,False
+TK-243192,sound_or_hardware,False,,bot_disagree,chat,screen is unresponsive,Warranty & Repair,Escalations & Warranty,Escalations & Warranty,unclear,low,legacy_fd,sound_or_hardware,0.95,rules,Chat Frontline,False,single rule; matched: screen is unresponsive,Chat Frontline,True,False,True,False,,False,False,True,False
+TK-248178,invoice_or_price,False,,short,email,invoice not downloading - please help,Billing & Payments,Billing,Billing,billing,high,helpdesk,invoice_or_price,0.95,rules,Billing,False,single rule; matched: invoice,Billing,True,True,True,True,,False,False,True,False
+TK-246859,order_not_arrived,False,,paid_but,email,"Dear Sir/Madam,
+
+I am writing with reference to my order of Strata 3 (VR905303) placed on 06/11. Paid on 06/11, still waiting for something to show up. I have checked the tracking page daily. I request you to kindly arrange a replacement.
+
+Sincerely,
+Steven Fernandes",Delivery & Shipping,Logistics,Logistics,delivery,high,helpdesk,order_not_arrived,0.95,rules,Logistics,False,"single rule; matched: still waiting for something to show, tracking, tracking page",Logistics,True,True,True,True,,False,False,False,False
+TK-254248,cancel_or_change,False,,bot_disagree,chat,"helo
+need to chagne delivery adress",Other,Chat Frontline,Chat Frontline,unclear,low,helpdesk,cancel_or_change,0.574,tfidf,Chat Frontline,False,no decisive phrase,Chat Frontline,True,False,True,True,,False,False,True,False
+TK-246126,invoice_or_price,False,,random,chat,"hey
+please share invoice with gst number
+the pulse 2 earbuds",Billing & Payments,Billing,Billing,billing,high,helpdesk,invoice_or_price,0.95,rules,Billing,False,"single rule; matched: gst, invoice",Billing,True,True,True,True,,False,False,False,False
+TK-252363,app_firmware_login,False,,random,chat,"sir ji
+app not opening after update
+please help kaaro",App & Firmware,Chat Frontline,Chat Frontline,unclear,low,helpdesk,app_firmware_login,0.95,rules,Chat Frontline,False,"single rule; matched: app, app not opening, update",Chat Frontline,True,True,True,True,,False,True,False,False
+TK-244095,cancel_or_change,False,,short,social,"need to change delivery address, vr881649",Other,Chat Frontline,Chat Frontline,delivery,medium,legacy_fd,cancel_or_change,0.95,rules,Chat Frontline,False,single rule; matched: change delivery address,Chat Frontline,True,False,True,True,,False,False,True,False
+TK-247721,invoice_or_price,False,,random,voice,"couppon code not working
+i waant my money back",Other,Voice Frontline,Voice Frontline,billing,medium,helpdesk,invoice_or_price,0.638,tfidf,Billing,False,no decisive phrase,Billing,True,False,True,False,,False,False,False,True
+TK-242953,payment_issue,False,,voice,voice,"Hi there, Bought my Arc around 21 Jan from vireo.in. Money debited but order not showing. I waited 24 hours. Please help. Awaiting response Vihaan",Billing & Payments,Billing,Billing,billing,high,legacy_fd,payment_issue,0.95,rules,Billing,False,"single rule; matched: debited, debited but order not",Billing,True,True,True,True,,False,False,False,True
+TK-248557,pairing_connection,False,,multi_issue,email,IT GOES SILENT FOR A SECOND EVERY FEW MINUTES AND COMES BACK,Connectivity,Email Frontline,Email Frontline,unclear,low,helpdesk,pairing_connection,0.8,rules,Email Frontline,True,precedence: dropout; matched: goes silent for a second every,Email Frontline,True,True,True,True,,False,False,False,False
+TK-248150,pairing_connection,False,,random,chat,Honestly regretting this purchase. Got Strata 3 from vireo.in a month ago. the pairing light blinks but nothing ever shows up on my Realme. I already forgot the devcie and tried again. This is the last time I buy frmo you.,Connectivity,Chat Frontline,Chat Frontline,unclear,low,helpdesk,pairing_connection,0.95,rules,Chat Frontline,False,single rule; matched: pairing,Chat Frontline,True,True,True,True,,False,False,False,False
+TK-249833,invoice_or_price,False,,random,email,"HELLO
+YOUR AD SAID 20% OFF AND THE CART SAYS FULL PRICE
+NEXA 2
+??",Product Enquiry,Email Frontline,Email Frontline,billing,medium,helpdesk,invoice_or_price,0.95,rules,Billing,False,"single rule; matched: % off, full price",Billing,True,False,True,False,,False,False,False,False
+TK-246143,order_not_arrived,False,,bot_disagree,chat,"DEAR SIR/MADAM,
+THIS IS REGARDING THE NEXA 2. Transaction done, where is my stuff.
+Can someone fix this?
+Regards Riya Verma",Billing & Payments,Billing,Billing,delivery,medium,helpdesk,order_not_arrived,0.95,rules,Logistics,False,single rule; matched: where is my stuff,Logistics,True,False,True,False,,False,False,False,False
+TK-241447,cancel_or_change,False,,bot_disagree,voice,"Hi team,
+Ordered my Orbit 10 days ago.  Please cancel, ordered by mistake.
+I tried cancel button, greyed out.
+Honestly regretting this purchase.
+I want my money back.",Other,Voice Frontline,Voice Frontline,billing,medium,legacy_fd,cancel_or_change,0.95,rules,Voice Frontline,False,"single rule; matched: cancel, ordered by mistake",Voice Frontline,True,False,True,True,,False,False,False,True
+TK-243469,sound_or_hardware,False,,random,email,very poor quality. ordered airlite earbuds a month ago. mic not working on calls. i already checked mic permissions. refund. now.,Audio Quality,Email Frontline,Email Frontline,unclear,low,legacy_fd,sound_or_hardware,0.95,rules,Email Frontline,False,single rule; matched: mic,Email Frontline,True,True,True,True,,False,False,False,False
+TK-242884,payment_issue,False,,random,email,I have been a loyal customer and this is how you treat me. I bought Orbit Mini on June 06. money debited but order not showing. I already tried logging out and in. This is the last time I buy from you.,Billing & Payments,Billing,Billing,billing,high,legacy_fd,payment_issue,0.95,rules,Billing,False,"single rule; matched: debited, debited but order not",Billing,True,True,True,True,,False,False,False,False
+TK-250462,battery_charging,False,,multi_issue,voice,"[IVR transcript] Order VR909385 (the Pulse 2 earbuds). Battery life has dropped to almost nothing. I fully charged and discharged twice. Nothing changed. Whta do I do now? Thanks, Ait",Other,Voice Frontline,Voice Frontline,unclear,low,helpdesk,battery_charging,0.6,rules,Voice Frontline,True,"highest rule score among several; matched: battery, charg",Voice Frontline,True,False,True,True,,False,False,False,True
+TK-242724,return_pickup,False,,bot_disagree,email,"hi
+return pickup has not happened
+hello??",Delivery & Shipping,Logistics,Logistics,unclear,low,legacy_fd,return_pickup,0.95,rules,Returns Desk,False,"single rule; matched: pickup, return pickup",Returns Desk,True,False,True,False,,False,False,False,False
+TK-245884,order_not_arrived,False,,paid_but,social,"dear team, i bought airlite on 30/09.  transaction done, where is my stuff. i checked with neighbours. nothing changed. please help.",Billing & Payments,Billing,Logistics,delivery,high,helpdesk,order_not_arrived,0.95,rules,Logistics,False,single rule; matched: where is my stuff,Logistics,True,False,True,False,,False,False,False,False
+TK-241436,damaged_or_wrong_item,False,,random,social,"hello
+box was crsuhed and the the fit band is cracked
+anyne thhere",Delivery & Shipping,Logistics,Logistics,unclear,low,legacy_fd,damaged_or_wrong_item,0.95,rules,Logistics,False,single rule; matched: crack,Logistics,True,True,True,True,,False,False,False,False
+TK-247581,pairing_connection,False,,short,chat,pairing is not working,Connectivity,Chat Frontline,Escalations & Warranty,unclear,low,helpdesk,pairing_connection,0.95,rules,Chat Frontline,False,single rule; matched: pairing,Chat Frontline,True,True,True,True,,False,False,True,False
+TK-247890,payment_issue,False,,random,email,"payment was deducted but no order was created, vr901289",Billing & Payments,Billing,Chat Frontline,billing,medium,helpdesk,payment_issue,0.95,rules,Billing,False,"single rule; matched: deducted, deducted but no order, payment",Billing,True,True,True,True,,False,False,False,False
+TK-245851,return_pickup,False,,random,chat,"To the Vireo Customer Care Team,
+
+I am writing with reference to my order of the Pulse buds (VR906365) placed on 21 Sep. Return pickup has not happened. I have rescheduled pickup twice. I request you to provide a resolution within 3 working days.
+
+Sincerely,
+Arrjun Fernandes
+Surat",Returns & Refunds,Returns Desk,Returns Desk,unclear,low,helpdesk,return_pickup,0.95,rules,Returns Desk,False,"single rule; matched: pickup, rescheduled pickup, return pickup",Returns Desk,True,True,True,True,,False,False,False,False
+TK-245909,pairing_connection,False,,random,chat,"hello ji
+it connects for a second and then vanishes from the device list
+kal se
+hello??",Connectivity,Chat Frontline,Escalations & Warranty,unclear,low,helpdesk,pairing_connection,0.95,rules,Chat Frontline,False,"single rule; matched: connects for a second, device list",Chat Frontline,True,True,True,True,,False,True,False,False
+TK-254428,refund_not_received,False,,voice,voice,"[IVR transcript] you picked up the item 8 days ago and my money hasn't come back, VR893023",Returns & Refunds,Returns Desk,Returns Desk,unclear,low,helpdesk,refund_not_received,0.95,rules,Returns Desk,False,single rule; matched: money hasn't come back,Returns Desk,True,True,True,True,,False,False,False,True
+TK-242780,damaged_or_wrong_item,False,,multi_issue,social,"Hi team, Bought Strata 3 around 26/05 from vireo.in. Received the wrong item. I checked the invoice. PLEASE CALL ME ON MY REGISTERED NUMBER. Awaiting response Sai Chopra",Delivery & Shipping,Logistics,Logistics,unclear,low,legacy_fd,unclear,0.3,none,Chat Frontline,True,"tie between damaged_or_wrong_item, invoice_or_price",Logistics,False,True,False,True,abstained (Unclear),True,False,False,False
+TK-252631,cancel_or_change,False,,bot_disagree,email,"typo in the flat number, courier will never find it - please call me on my registered number",Other,Email Frontline,Email Frontline,unclear,low,helpdesk,cancel_or_change,0.95,rules,Email Frontline,False,single rule; matched: flat number,Email Frontline,True,False,True,True,,False,False,False,False
+TK-241930,battery_charging,False,,random,email,"hello ji
+the promised 30 hours is nowhere close, i get maybe 2
+please help karo
+airlite
+anyone there",Charging & Battery,Email Frontline,Email Frontline,unclear,low,legacy_fd,unclear,0.0,none,Email Frontline,False,no decisive phrase,Email Frontline,False,True,True,True,abstained (Unclear),False,True,False,False
+TK-250239,battery_charging,False,,random,email,"hello vireo,
+bought pulse 2 buds around september 06 from flipkart. battery life has dropped to almost nothing.
+i want a replacement.
+thhank you",Charging & Battery,Email Frontline,Email Frontline,unclear,low,helpdesk,battery_charging,0.95,rules,Email Frontline,False,single rule; matched: battery,Email Frontline,True,True,True,True,,False,False,False,False
+TK-254621,cancel_or_change,False,,random,email,"dear sir/madam,
+
+i am writing with reference to my oder of the orbit smart speaker (vr888115) placed on june 19. my son ordered this without asking, please reverse. i have tried cancel button, greyed out. i request you to process a refund to my original payment method.
+
+regards,
+pranav tiwari
+nashik",Other,Email Frontline,Chat Frontline,billing,medium,helpdesk,cancel_or_change,0.95,rules,Email Frontline,False,single rule; matched: cancel,Email Frontline,True,False,True,True,,False,False,False,False
+TK-252798,cancel_or_change,False,,bot_disagree,voice,"[IVR transcript] hi team, ordered my nexa 2 watch in april. cancel order. i want my money back.",Other,Voice Frontline,Voice Frontline,unclear,low,helpdesk,cancel_or_change,0.95,rules,Voice Frontline,False,single rule; matched: cancel,Voice Frontline,True,False,True,True,,False,False,False,True
+TK-245677,pairing_connection,False,,random,email,Honestly regretting this purchase. This is regarding the Pulse buds. bluetooth pairing fails every time. I already tried on another phone. Fix this or I am posting on twitter.,Connectivity,Email Frontline,Email Frontline,unclear,low,helpdesk,pairing_connection,0.95,rules,Email Frontline,False,"single rule; matched: bluetooth, pairing",Email Frontline,True,True,True,True,,False,False,False,False
+TK-251174,app_firmware_login,False,,short,email,cannot login to my account,Account & Login,Email Frontline,Email Frontline,unclear,low,helpdesk,app_firmware_login,0.95,rules,Email Frontline,False,"single rule; matched: login, my account",Email Frontline,True,True,True,True,,False,False,True,False
+TK-243264,refund_not_received,False,,random,email,"HELLO JI
+REFUND WAS PROMISED 16 DAYS AGO AND NOTHING
+PLEASE HELP KARO
+MY PULSE
+URGENT",Billing & Payments,Billing,Billing,unclear,low,legacy_fd,refund_not_received,0.95,rules,Returns Desk,False,"single rule; matched: refund, refund was promised",Returns Desk,True,False,True,False,,False,True,False,False
+TK-248081,invoice_or_price,False,,random,social,"Hi there, Order VR889303 (my Straata 3 headphones).  Promo code shows invalid. I tried in caps. Nothing changed. Waiting for your reply. Thank you",Billing & Payments,Billing,Billing,billing,high,helpdesk,invoice_or_price,0.95,rules,Billing,False,single rule; matched: promo code,Billing,True,True,True,True,,False,False,False,False
+TK-248258,refund_not_received,False,,voice,voice,"Order VR883915 (my Pulse).  Refund was promised 15 days ago and nothing.
+I emailed twice.
+How do I get this fixed?
+Please revert",Returns & Refunds,Returns Desk,Returns Desk,unclear,low,helpdesk,refund_not_received,0.95,rules,Returns Desk,False,"single rule; matched: refund, refund was promised",Returns Desk,True,True,True,True,,False,False,False,True
+TK-253722,pairing_connection,False,,low_conf,chat,"hii
+keeps losing my phone if i wlak to the other room",Audio Quality,Chat Frontline,Chat Frontline,unclear,low,helpdesk,pairing_connection,0.571,tfidf,Chat Frontline,False,no decisive phrase,Chat Frontline,True,False,True,True,,False,False,False,False
+TK-251730,battery_charging,False,,voice,voice,"hey
+i have to charge it twice a day now, it used to last days
+my nexa 2 watch",Charging & Battery,Voice Frontline,Voice Frontline,unclear,low,helpdesk,battery_charging,0.95,rules,Voice Frontline,False,single rule; matched: charg,Voice Frontline,True,True,True,True,,False,False,False,True
+TK-249574,app_firmware_login,False,,bot_disagree,chat,Honestly regrettig this purchase.  Orderred Pulse 2 in December. OTP not coming on my number. I already tred 5 times. Escalate this to someone senior.,Other,Chat Frontline,Chat Frontline,unclear,low,helpdesk,app_firmware_login,0.95,rules,Chat Frontline,False,single rule; matched: otp,Chat Frontline,True,False,True,True,,False,False,False,False
+TK-240827,pairing_connection,False,,hinglish,chat,"bhai
+it connects for a second and then vanishes from the device list
+pls reply",App & Firmware,Chat Frontline,Chat Frontline,unclear,low,legacy_fd,pairing_connection,0.95,rules,Chat Frontline,False,"single rule; matched: connects for a second, device list",Chat Frontline,True,False,True,True,,False,True,False,False
+TK-245630,order_not_arrived,False,,paid_but,email,not what i expected from vireo. i bought nexa watch on september 27. paid via upi on 27 sep. 6 days. nothing. i already called the courier. fix this or i am posting on twitter.,Billing & Payments,Billing,Billing,delivery,medium,helpdesk,order_not_arrived,0.95,rules,Logistics,False,"single rule; matched: 6 days. nothing, courier",Logistics,True,False,True,False,,False,False,False,False
+TK-243251,order_not_arrived,False,,bot_disagree,chat,"9 days since payment, u have no idea where it is and neither do I, VR894871",Billing & Payments,Billing,Logistics,delivery,high,legacy_fd,order_not_arrived,0.95,rules,Logistics,False,single rule; matched: no idea where it is,Logistics,True,False,True,False,,False,False,False,False
+TK-244237,payment_issue,False,,low_conf,voice,[IVR transcript] the page failed after i paid & now nothing shows in my account,Billing & Payments,Billing,Billing,billing,high,legacy_fd,payment_issue,0.6,rules,Billing,True,"highest rule score among several; matched: nothing shows in my account, page failed after i paid, paid",Billing,True,True,True,True,,False,False,False,True
+TK-240888,order_not_arrived,False,,random,email,"Hey,
+Ordered pulse 1 3 weeks back. My order has not been delivered yet.
+I called the courier. Nothing changed.
+I want my money back.
+Rgds",Delivery & Shipping,Logistics,Logistics,delivery,high,legacy_fd,order_not_arrived,0.95,rules,Logistics,False,"single rule; matched: courier, not been delivered",Logistics,True,True,True,True,,False,False,False,False
+TK-254080,pairing_connection,False,,random,voice,"it connects for a second and then vanishes from the device list
+need this sorted this week",Connectivity,Voice Frontline,Voice Frontline,unclear,low,helpdesk,pairing_connection,0.95,rules,Voice Frontline,False,"single rule; matched: connects for a second, device list",Voice Frontline,True,True,True,True,,False,False,False,True
+TK-254169,warranty_status,False,,voice,voice,"what is teh status of my warranty claim, VR904796, please resolve asap",Warranty & Repair,Escalations & Warranty,Escalations & Warranty,unclear,low,helpdesk,warranty_status,0.8,rules,Escalations & Warranty,False,"precedence: repair/claim status; matched: claim, warranty",Escalations & Warranty,True,True,True,True,,False,False,False,True
+TK-246600,product_question,False,,voice,voice,"hii
+does my pulse 2 work with iphone
+my pulse 2 vr895792
+kindly do the needful",Product Enquiry,Voice Frontline,Voice Frontline,unclear,low,helpdesk,product_question,0.95,rules,Voice Frontline,False,single rule; matched: does my pulse 2 work,Voice Frontline,True,True,True,True,,False,False,False,True
+TK-251393,pairing_connection,False,,random,email,"dear sir/madam,
+
+i am writing with reference to my order of airlite earbuds (vr895158) placed on 26/03.  the pairing light blinks but nothing ever shows up on my nothing phone. i have restarted the phone. i request you to process a refund to my original payment method.
+
+sincerely,
+ritika patel",Connectivity,Email Frontline,Email Frontline,unclear,low,helpdesk,pairing_connection,0.95,rules,Email Frontline,False,single rule; matched: pairing,Email Frontline,True,True,True,True,,False,False,False,False
+TK-241764,order_not_arrived,False,,paid_but,chat,"helo
+payment done, order stats has not moved since 03 apr
+kindly do the needful",Billing & Payments,Billing,Logistics,delivery,high,legacy_fd,order_not_arrived,0.797,tfidf,Logistics,False,no decisive phrase,Logistics,True,False,True,False,,False,False,False,False
+TK-246399,app_firmware_login,True,'update failed and now it won't turn on': firmware (primary) vs hardware fault,random,email,"team,
+update failed and now it won't turn on",App & Firmware,Email Frontline,Email Frontline,unclear,low,helpdesk,app_firmware_login,0.6,rules,Email Frontline,True,"highest rule score among several; matched: update, update failed",Email Frontline,True,True,True,True,,False,False,False,False
+TK-243270,pairing_connection,False,,multi_issue,email,"dear sir/madam,
+
+i am writing with reference to my order of the mini speaker placed on 09 apr. audio keeps disconnecting every few minutes. i have kept phone in hand. i request you to look into this matter at the earliest.
+
+sincerely,
+thomas dhillon
+jaipur",Connectivity,Email Frontline,Email Frontline,unclear,low,legacy_fd,pairing_connection,0.8,rules,Email Frontline,True,"precedence: dropout; matched: disconnect, every few minutes",Email Frontline,True,True,True,True,,False,False,False,False
+TK-248544,order_not_arrived,False,,voice,voice,"[IVR transcript] hello, this is regarding the fit band. order not delivered, tracking not updating. i called the courier. i want my money back. please revert, riya dhillon",Delivery & Shipping,Logistics,Logistics,delivery,high,helpdesk,order_not_arrived,0.95,rules,Logistics,False,"single rule; matched: courier, not delivered, tracking, tracking not updating",Logistics,True,True,True,True,,False,False,False,True

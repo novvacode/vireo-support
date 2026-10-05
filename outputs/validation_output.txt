@@ -1,0 +1,76 @@
+== experiment v1: 190 gold tickets; labels {'order_not_arrived': 34, 'pairing_connection': 30, 'app_firmware_login': 20, 'battery_charging': 14, 'cancel_or_change': 13, 'invoice_or_price': 12, 'payment_issue': 12, 'return_pickup': 12, 'sound_or_hardware': 12, 'refund_not_received': 12, 'damaged_or_wrong_item': 10, 'product_question': 6, 'warranty_status': 3}
+                                 subset        system                                                             metric  correct     n  value  ci95_low  ci95_high
+                               all gold      our tool                                                  category accuracy      179   190  0.942     0.899      0.967
+                               all gold      our tool                                                owner-team accuracy      183   190  0.963     0.926      0.982
+                               all gold    intake bot                                      category-compatible (lenient)      119   190  0.626     0.556      0.692
+                               all gold    intake bot                                                owner-team accuracy      150   190  0.789     0.726      0.841
+           random (population estimate)      our tool                                                  category accuracy       77    80  0.962     0.895      0.987
+           random (population estimate)      our tool                                                owner-team accuracy       78    80  0.975     0.913      0.993
+           random (population estimate)    intake bot                                      category-compatible (lenient)       59    80  0.738     0.632      0.821
+           random (population estimate)    intake bot                                                owner-team accuracy       66    80  0.825     0.727      0.893
+                  hard-case strata only      our tool                                                  category accuracy      102   110  0.927     0.863      0.963
+                  hard-case strata only      our tool                                                owner-team accuracy      105   110  0.955     0.898      0.980
+                  hard-case strata only    intake bot                                      category-compatible (lenient)       60   110  0.545     0.452      0.635
+                  hard-case strata only    intake bot                                                owner-team accuracy       84   110  0.764     0.676      0.833
+                               all gold      our tool                        WEAK PROXY: owner family == resolver family      144   190  0.758     0.692      0.813
+                               all gold    intake bot                     WEAK PROXY: assigned family == resolver family      170   190  0.895     0.843      0.931
+                               all gold AI gold label                   WEAK PROXY: gold owner family == resolver family      150   190  0.789     0.726      0.841
+all Billing-tagged tickets (population)      our tool    WEAK PROXY: tool says delivery when notes say delivery (recall)      886   921  0.962     0.948      0.973
+all Billing-tagged tickets (population)      our tool WEAK PROXY: notes say delivery when tool says delivery (precision)      886   906  0.978     0.966      0.986
+               all tickets (population)      our tool                        WEAK PROXY: owner family == resolver family     9254 11641  0.795     0.788      0.802
+               all tickets (population)    intake bot                     WEAK PROXY: assigned family == resolver family    10292 11641  0.884     0.878      0.890
+
+  by stratum / hard-case flag (tool category acc | tool owner acc | bot owner acc):
+    stratum: bot_disagree            n= 25  92% | 100% | 52%
+    stratum: hinglish                n= 15  100% | 100% | 80%
+    stratum: short                   n= 15  100% | 100% | 93%
+    stratum: voice                   n= 15  100% | 100% | 93%
+    stratum: multi_issue             n= 15  93% | 93% | 100%
+    stratum: low_conf                n= 15  67% | 73% | 87%
+    stratum: paid_but                n= 10  100% | 100% | 30%
+    any ticket with hinglish         n= 27  93% | 96% | 70%
+    any ticket with short            n= 22  100% | 100% | 91%
+    any ticket with voice            n= 38  92% | 95% | 89%
+    any ticket with ambiguous        n=  8  75% | 88% | 75%
+
+  weak check, Billing-tagged population (agent notes vs tool):
+new_category          tool: delivery category  tool: other
+work_type                                                 
+notes: delivery work                      886           35
+notes: not delivery                        20         1484
+
+  per category (tool):
+             category  gold_n  predicted_n  precision  recall   f1
+    order_not_arrived      34           34       1.00    1.00 1.00
+damaged_or_wrong_item      10            5       1.00    0.50 0.67
+     cancel_or_change      13           13       1.00    1.00 1.00
+        payment_issue      12           12       1.00    1.00 1.00
+     invoice_or_price      12           13       0.92    1.00 0.96
+        return_pickup      12           11       1.00    0.92 0.96
+  refund_not_received      12           11       1.00    0.92 0.96
+      warranty_status       3            3       1.00    1.00 1.00
+   pairing_connection      30           29       1.00    0.97 0.98
+    sound_or_hardware      12           13       0.92    1.00 0.96
+     battery_charging      14           12       1.00    0.86 0.92
+   app_firmware_login      20           21       0.95    1.00 0.98
+     product_question       6            5       1.00    0.83 0.91
+              unclear       0            8       0.00     NaN  NaN
+
+  tool errors: 11; by type {'abstained (Unclear)': 8, 'device-fault confusion (same Frontline owner)': 2, 'delivery labelled as Billing': 1}; costly (wrong owner) 7
+    TK-243854 [low_conf] gold=return_pickup tool=unclear (none 0.00) COSTLY | [IVR transcript] Dear Sir/Madam, I bought Pulse earbuds on 27 Jul. The app said pickup today, that was on 27 J
+    TK-254294 [random] gold=damaged_or_wrong_item tool=unclear (none 0.00) COSTLY | [IVR transcript] got a different colour than ordered - what do i do now?
+    TK-247366 [low_conf] gold=product_question tool=unclear (none 0.00) cheap | [IVR transcript] Hi, Got 65W charger from Amazon last month. Before I buy - will this talk to a 2019 Samsung. 
+    TK-248079 [low_conf] gold=damaged_or_wrong_item tool=unclear (none 0.00) COSTLY | This is regarding airlite earbuds.  Ordered black, got white, not what I asked for. I rechecked my order. Plea
+    TK-247809 [low_conf] gold=damaged_or_wrong_item tool=unclear (none 0.30) COSTLY | honestly regretting tis purchase. this is regarding my neexa 2 watch. wrong product delivered. i already chcke
+    TK-252434 [bot_disagree] gold=pairing_connection tool=sound_or_hardware (rules 0.95) cheap | Honestly regretting this purchase. I boguht Strata 2 on 24/03. teh sound stutters whenever my phoen is in my p
+    TK-252442 [low_conf] gold=refund_not_received tool=unclear (none 0.30) COSTLY | hello ji the reutrn was accepted but the amount is nowhere in my account anyone there
+    TK-253877 [bot_disagree] gold=battery_charging tool=app_firmware_login (tfidf 0.56) cheap | honestly regretting this purchase.  got my pulse 2 from vireo.in 2 weeks ago. the promiseed 40 hours is nowher
+    TK-243926 [random] gold=damaged_or_wrong_item tool=invoice_or_price (tfidf 0.52) COSTLY | dear team, got pulse earbuds from vireo.in in july. wrong product delivered. i checked the invoice. what do i 
+    TK-242780 [multi_issue] gold=damaged_or_wrong_item tool=unclear (none 0.30) COSTLY | Hi team, Bought Strata 3 around 26/05 from vireo.in. Received the wrong item. I checked the invoice. PLEASE CA
+    TK-241930 [random] gold=battery_charging tool=unclear (none 0.00) cheap | hello ji the promised 30 hours is nowhere close, i get maybe 2 please help karo airlite anyone there
+
+  bot owner errors: 40; of which gold delivery tagged Billing: 17; tool fixes 39 of them
+tool_owner_correct  tool owner right  tool owner wrong
+bot_owner_correct                                     
+bot owner right                  144                 6
+bot owner wrong                   39                 1

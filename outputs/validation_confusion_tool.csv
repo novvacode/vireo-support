@@ -1,0 +1,15 @@
+gold_label,order_not_arrived,damaged_or_wrong_item,cancel_or_change,payment_issue,invoice_or_price,return_pickup,refund_not_received,warranty_status,pairing_connection,sound_or_hardware,battery_charging,app_firmware_login,product_question,unclear
+order_not_arrived,34,0,0,0,0,0,0,0,0,0,0,0,0,0
+damaged_or_wrong_item,0,5,0,0,1,0,0,0,0,0,0,0,0,4
+cancel_or_change,0,0,13,0,0,0,0,0,0,0,0,0,0,0
+payment_issue,0,0,0,12,0,0,0,0,0,0,0,0,0,0
+invoice_or_price,0,0,0,0,12,0,0,0,0,0,0,0,0,0
+return_pickup,0,0,0,0,0,11,0,0,0,0,0,0,0,1
+refund_not_received,0,0,0,0,0,0,11,0,0,0,0,0,0,1
+warranty_status,0,0,0,0,0,0,0,3,0,0,0,0,0,0
+pairing_connection,0,0,0,0,0,0,0,0,29,1,0,0,0,0
+sound_or_hardware,0,0,0,0,0,0,0,0,0,12,0,0,0,0
+battery_charging,0,0,0,0,0,0,0,0,0,0,12,1,0,1
+app_firmware_login,0,0,0,0,0,0,0,0,0,0,0,20,0,0
+product_question,0,0,0,0,0,0,0,0,0,0,0,0,5,1
+unclear,0,0,0,0,0,0,0,0,0,0,0,0,0,0

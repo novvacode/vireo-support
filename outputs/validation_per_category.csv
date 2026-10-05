@@ -1,0 +1,15 @@
+category,name,gold_n,predicted_n,tp,fp,fn,precision,recall,f1,recall_ci95_low,recall_ci95_high
+order_not_arrived,Order not arrived,34,34,34,0,0,1.0,1.0,1.0,0.898,1.0
+damaged_or_wrong_item,Damaged or wrong item received,10,5,5,0,5,1.0,0.5,0.667,0.237,0.763
+cancel_or_change,Cancel or change an order,13,13,13,0,0,1.0,1.0,1.0,0.772,1.0
+payment_issue,"Payment taken, no order / charged twice",12,12,12,0,0,1.0,1.0,1.0,0.757,1.0
+invoice_or_price,"Invoice, GST or price/discount",12,13,12,1,0,0.923,1.0,0.96,0.757,1.0
+return_pickup,Return pickup not done,12,11,11,0,1,1.0,0.917,0.957,0.646,0.985
+refund_not_received,Refund not received,12,11,11,0,1,1.0,0.917,0.957,0.646,0.985
+warranty_status,Warranty or repair status,3,3,3,0,0,1.0,1.0,1.0,0.438,1.0
+pairing_connection,Pairing & connection,30,29,29,0,1,1.0,0.967,0.983,0.833,0.994
+sound_or_hardware,"Sound, mic or hardware fault",12,13,12,1,0,0.923,1.0,0.96,0.757,1.0
+battery_charging,Battery & charging,14,12,12,0,2,1.0,0.857,0.923,0.601,0.96
+app_firmware_login,"App, firmware or login",20,21,20,1,0,0.952,1.0,0.976,0.839,1.0
+product_question,Product question,6,5,5,0,1,1.0,0.833,0.909,0.436,0.97
+unclear,Unclear,0,8,0,8,0,0.0,,,,
