@@ -29,6 +29,8 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "outputs"
 STRATA = [("random", 80), ("bot_disagree", 25), ("hinglish", 15), ("short", 15), ("voice", 15),
           ("multi_issue", 15), ("low_conf", 15), ("paid_but", 10)]
+STRATA_SMALL = [("random", 60), ("bot_disagree", 15), ("hinglish", 8), ("short", 8), ("voice", 8),
+                ("multi_issue", 8), ("low_conf", 8), ("paid_but", 5)]  # experiment 2: 120 tickets
 HINGLISH = r"\b(?:bhai|ji|kuch|pareshan|paisa|jaldi|abhi tak|karo|nahi|hai|hu|se)\b"
 PAID = r"paid|payment|debited|deducted|money|transaction|rs ?\d"
 DELIVERY = r"deliver|received|in hand|tracking|courier|show up|doorstep|where is my|processing|not moved"
@@ -43,7 +45,7 @@ def frozen_predictions() -> tuple[pd.DataFrame, pd.DataFrame]:
     return v, pred
 
 
-def draw(seed: int, tag: str, exclude: set[str]) -> pd.DataFrame:
+def draw(seed: int, tag: str, exclude: set[str], strata_spec=STRATA) -> pd.DataFrame:
     v, pred = frozen_predictions()
     p = v[["ticket_id", "channel", "customer_message"]].merge(
         pred[["ticket_id", "bot_disagrees", "multi_issue", "confidence", "method"]], on="ticket_id")
@@ -60,7 +62,7 @@ def draw(seed: int, tag: str, exclude: set[str]) -> pd.DataFrame:
         "paid_but": m.str.contains(PAID) & m.str.contains(DELIVERY),
     }
     taken, rows = set(), []
-    for name, n in STRATA:
+    for name, n in strata_spec:
         cand = p[masks[name] & ~p["ticket_id"].isin(taken)]
         s = cand.sample(min(n, len(cand)), random_state=seed)
         taken |= set(s["ticket_id"])
@@ -80,9 +82,10 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--seed", type=int, default=4040)
     ap.add_argument("--tag", default="v1")
-    ap.add_argument("--exclude", nargs="*", default=[], help="earlier gold strata CSVs to exclude")
+    ap.add_argument("--exclude", nargs="*", default=[], help="CSVs with a ticket_id column to exclude (earlier gold, viewed lists)")
+    ap.add_argument("--small", action="store_true", help="use the 120-ticket strata of experiment 2")
     a = ap.parse_args()
     excl = set(pd.read_csv(ROOT / "labels" / "taxonomy_sample200.csv")["ticket_id"])
     for f in a.exclude:
         excl |= set(pd.read_csv(f)["ticket_id"])
-    draw(a.seed, a.tag, excl)
+    draw(a.seed, a.tag, excl, STRATA_SMALL if a.small else STRATA)

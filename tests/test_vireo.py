@@ -110,3 +110,17 @@ def test_cli_runs_on_sample_quickly(tmp_path):
     for f in ["monthly_by_new_category.png", "monthly_by_new_category.csv",
               "monthly_by_owner_team.png", "monthly_by_owner_team.csv", "categorise_summary.txt"]:
         assert (tmp_path / f).exists(), f
+
+
+@pytest.mark.parametrize("msg,expected", [
+    # rules v2 (post-test changes, validated only on fresh gold v2)
+    ("wrong product delivered. i checked the invoice. what do i do now?", "damaged_or_wrong_item"),
+    ("[IVR transcript] got a different colour than ordered - what do i do now?", "damaged_or_wrong_item"),
+    ("Ordered black, got white, not what I asked for.", "damaged_or_wrong_item"),
+    ("ordered the wrong colour, don't ship it", "cancel_or_change"),        # customer's own mistake: still cancel/change
+    ("the promised 30 hours is nowhere close, i get maybe 2", "battery_charging"),
+    ("hello ji the reutrn was accepted but the amount is nowhere in my account", "refund_not_received"),
+    ("need GST invoice for my order. I already tried different browser.", "invoice_or_price"),  # invoice still works
+])
+def test_rules_v2_cases(msg, expected):
+    assert rules.classify(msg).category == expected
